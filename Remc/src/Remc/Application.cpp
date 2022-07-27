@@ -1,6 +1,7 @@
 #include "Application.h"
 
-namespace Remc {
+namespace Remc
+{
 
 	Application::Application()
 	{

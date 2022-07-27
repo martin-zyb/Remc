@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Remc\Log.h" />
     <ClInclude Include="src\Remc\Application.h" />
     <ClInclude Include="src\Remc\Core.h" />
     <ClInclude Include="src\Remc.h" />
     <ClInclude Include="src\Remc\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Remc\Log.cpp" />
     <ClCompile Include="src\Remc\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -68,6 +70,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir)Remc\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

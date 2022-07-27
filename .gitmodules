@@ -1,0 +1,3 @@
+[submodule "Remc/vendor/spdlog"]
+	path = Remc/vendor/spdlog
+	url = https://github.com/gabime/spdlog

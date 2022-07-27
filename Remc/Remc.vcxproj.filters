@@ -30,9 +30,15 @@
     <ClInclude Include="src\Remc\EntryPoint.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\Remc\Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Remc\Application.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Remc\Log.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

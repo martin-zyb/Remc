@@ -2,7 +2,8 @@
 
 #include "Core.h"
 
-namespace Remc {
+namespace Remc
+{
 
 	class REMC_API Application
 	{
