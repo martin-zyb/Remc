@@ -8,8 +8,8 @@ int main(int argc,char** argv)
 {
 	Remc::Log::Init();
 	REMC_CORE_WARN("Initialized log!");
-	int a = 5;
-	REMC_CLIENT_INFO("Hello! Var={0}", a);
+	REMC_CORE_INFO("Remc Init successfully!");
+	REMC_CLIENT_INFO("Hello,welcome to Remc!");
 
 	auto app = Remc::CreateApplication();
 	app->run();
