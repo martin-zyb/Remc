@@ -19,6 +19,10 @@
     <ClInclude Include="src\Remc\Log.h">
       <Filter>Remc</Filter>
     </ClInclude>
+    <ClInclude Include="src\Remc\Events\Event.h" />
+    <ClInclude Include="src\Remc\Events\KeyEvent.h" />
+    <ClInclude Include="src\Remc\Events\MouseEvent.h" />
+    <ClInclude Include="src\Remc\Events\ApplicationEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Remc\Application.cpp">

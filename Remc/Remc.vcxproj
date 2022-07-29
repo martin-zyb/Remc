@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>REMC_PLATFORM_WINDOWS;REMC_BUILD_DLL;REMC_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src\;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -147,6 +147,10 @@
     <ClInclude Include="src\Remc\Application.h" />
     <ClInclude Include="src\Remc\Core.h" />
     <ClInclude Include="src\Remc\EntryPoint.h" />
+    <ClInclude Include="src\Remc\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Remc\Events\Event.h" />
+    <ClInclude Include="src\Remc\Events\KeyEvent.h" />
+    <ClInclude Include="src\Remc\Events\MouseEvent.h" />
     <ClInclude Include="src\Remc\Log.h" />
   </ItemGroup>
   <ItemGroup>
