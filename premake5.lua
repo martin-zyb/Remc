@@ -18,6 +18,9 @@ project "Remc"
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+		pchheader "rcpch.h"
+		pchsource "Remc/src/rcpch.cpp"
+
 		files
 		{
 			"%{prj.name}/src/**.h",
@@ -26,7 +29,7 @@ project "Remc"
 
 		includedirs
 		{
-			"%{prj.name}/src"
+			"%{prj.name}/src",
 			"%{prj.name}/vendor/spdlog/include"
 		}
 

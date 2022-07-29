@@ -1,3 +1,4 @@
+#include "rcpch.h"
 #include "Log.h"
 
 namespace Remc

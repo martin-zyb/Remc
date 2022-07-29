@@ -4,6 +4,9 @@
     <Filter Include="Remc">
       <UniqueIdentifier>{ACC28B7C-98F9-8C0D-41E6-72102DFC080F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Remc\Events">
+      <UniqueIdentifier>{10352EFD-7CEA-A6F2-05DF-A0C971939DF6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Remc.h" />
@@ -16,13 +19,22 @@
     <ClInclude Include="src\Remc\EntryPoint.h">
       <Filter>Remc</Filter>
     </ClInclude>
+    <ClInclude Include="src\Remc\Events\ApplicationEvent.h">
+      <Filter>Remc\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Remc\Events\Event.h">
+      <Filter>Remc\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Remc\Events\KeyEvent.h">
+      <Filter>Remc\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Remc\Events\MouseEvent.h">
+      <Filter>Remc\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Remc\Log.h">
       <Filter>Remc</Filter>
     </ClInclude>
-    <ClInclude Include="src\Remc\Events\Event.h" />
-    <ClInclude Include="src\Remc\Events\KeyEvent.h" />
-    <ClInclude Include="src\Remc\Events\MouseEvent.h" />
-    <ClInclude Include="src\Remc\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\rcpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Remc\Application.cpp">
@@ -31,5 +43,6 @@
     <ClCompile Include="src\Remc\Log.cpp">
       <Filter>Remc</Filter>
     </ClCompile>
+    <ClCompile Include="src\rcpch.cpp" />
   </ItemGroup>
 </Project>

@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Remc
 {
 	class REMC_API KeyEvent : public Event

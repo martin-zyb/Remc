@@ -1,9 +1,7 @@
 #pragma once
 
+#include "rcpch.h"
 #include "Remc/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Remc
 {
