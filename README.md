@@ -14,13 +14,14 @@ Sandbox is the main program that calls and debugs Remc
 Use premake to support multiple platforms  
 ### Generator
 premake5.exe 
+### License
+LICENSE.txt 
 ### File
 premake5.lua (source file)  
 GeneratePorjects.bat (generate file : Currently only windows is supported)  
-### License
-LICENSE.txt  
 ## External warehouse/tools
 1. Spdlog : https://github.com/gabime/spdlog  
 2. premake : https://github.com/premake  
+3. GLFW : https://github.com/TheCherno/glfw  
 ## Last
 Thank you for your support of this project  
