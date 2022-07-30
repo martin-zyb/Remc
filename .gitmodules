@@ -1,3 +1,6 @@
 [submodule "Remc/vendor/spdlog"]
 	path = Remc/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Remc/vendor/GLFW"]
+	path = Remc/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

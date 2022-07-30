@@ -35,6 +35,7 @@
       <Filter>Remc</Filter>
     </ClInclude>
     <ClInclude Include="src\rcpch.h" />
+    <ClInclude Include="src\Remc\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Remc\Application.cpp">
