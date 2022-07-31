@@ -13,6 +13,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Remc/Log.h"
+
 #ifdef REMC_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

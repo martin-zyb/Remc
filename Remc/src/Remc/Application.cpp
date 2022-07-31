@@ -1,15 +1,16 @@
 #include "rcpch.h"
 #include "Application.h"
 
-#include "Remc/Log.h"
 #include "Remc/Events/ApplicationEvent.h"
+
+#include <GLFW/glfw3.h>
 
 namespace Remc
 {
 
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -19,17 +20,12 @@ namespace Remc
 
 	void Application::run()
 	{
-		WindowResizeEvent e(1200, 720);
-		if (e.IsInCategory(EventCategoryApplication))
+		while (m_Running)
 		{
-			REMC_TRACE(e);
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
 		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			REMC_TRACE(e);
-		}
-
-		while (true);
 	}
 
 }

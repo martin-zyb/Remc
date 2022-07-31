@@ -15,8 +15,8 @@ namespace Remc
 		unsigned int Height;
 
 		WindowProps(const std::string& title = "Remc Engine",
-			unsigned int width = 1280,
-			unsigned int height = 720)
+			unsigned int width = 960,
+			unsigned int height = 540)
 			: Title(title), Width(width), Height(height) {}
 
 	};
@@ -36,7 +36,7 @@ namespace Remc
 
 		// Window attributes
 		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
-		virtual void SetSync(bool enabled) = 0;
+		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());

@@ -25,7 +25,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -149,6 +149,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Remc.h" />
     <ClInclude Include="src\Remc\Application.h" />
     <ClInclude Include="src\Remc\Core.h" />
@@ -158,10 +159,11 @@
     <ClInclude Include="src\Remc\Events\KeyEvent.h" />
     <ClInclude Include="src\Remc\Events\MouseEvent.h" />
     <ClInclude Include="src\Remc\Log.h" />
-    <ClInclude Include="src\rcpch.h" />
     <ClInclude Include="src\Remc\Window.h" />
+    <ClInclude Include="src\rcpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Remc\Application.cpp" />
     <ClCompile Include="src\Remc\Log.cpp" />
     <ClCompile Include="src\rcpch.cpp">
