@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Remc/Events/ApplicationEvent.h"
 #include "Remc/Window.h"
 
 namespace Remc
@@ -12,11 +13,14 @@ namespace Remc
 	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		bool OnWindowClose(WindowCloseEvent& e);
 	public:
 		Application();
 		virtual ~Application();
 
 		void run();
+
+		void OnEvent(Event& e);
 	};
 
 	// To be define in CLIENT
