@@ -40,6 +40,12 @@
     <ClInclude Include="src\Remc\Events\MouseEvent.h">
       <Filter>Remc\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Remc\Layer.h">
+      <Filter>Remc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Remc\LayerStack.h">
+      <Filter>Remc</Filter>
+    </ClInclude>
     <ClInclude Include="src\Remc\Log.h">
       <Filter>Remc</Filter>
     </ClInclude>
@@ -47,8 +53,6 @@
       <Filter>Remc</Filter>
     </ClInclude>
     <ClInclude Include="src\rcpch.h" />
-    <ClInclude Include="src\Remc\Layer.h" />
-    <ClInclude Include="src\Remc\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -57,11 +61,15 @@
     <ClCompile Include="src\Remc\Application.cpp">
       <Filter>Remc</Filter>
     </ClCompile>
+    <ClCompile Include="src\Remc\Layer.cpp">
+      <Filter>Remc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Remc\LayerStack.cpp">
+      <Filter>Remc</Filter>
+    </ClCompile>
     <ClCompile Include="src\Remc\Log.cpp">
       <Filter>Remc</Filter>
     </ClCompile>
     <ClCompile Include="src\rcpch.cpp" />
-    <ClCompile Include="src\Remc\Layer.cpp" />
-    <ClCompile Include="src\Remc\LayerStack.cpp" />
   </ItemGroup>
 </Project>

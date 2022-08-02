@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}/%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Remc/vendor/GLFW/include"
+IncludeDir["GLad"] = "Remc/vendor/GLad/include"
 
 include "Remc/vendor/GLFW"
+include "Remc/vendor/GLad"
 
 project "Remc"
 		location "Remc"
@@ -36,12 +38,14 @@ project "Remc"
 		{
 			"%{prj.name}/src",
 			"%{prj.name}/vendor/spdlog/include",
-			"%{IncludeDir.GLFW}"
+			"%{IncludeDir.GLFW}",
+			"%{IncludeDir.GLad}"
 		}
 
 		links
 		{
 			"GLFW",
+			"GLad",
 			"opengl32.lib"
 		}
 
@@ -53,7 +57,8 @@ project "Remc"
 			defines
 			{
 				"REMC_PLATFORM_WINDOWS",
-				"REMC_BUILD_DLL"
+				"REMC_BUILD_DLL",
+				"GLFW_INCLUDE_NONE"
 			}
 
 			postbuildcommands

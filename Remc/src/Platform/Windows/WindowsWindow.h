@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Remc/Window.h"
-
 #include <GLFW/glfw3.h>
 
 namespace Remc
