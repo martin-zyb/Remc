@@ -63,14 +63,17 @@ project "Remc"
 
 		filter "configurations:Debug"
 			defines "REMC_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "REMC_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "REMC_DIST"
+			buildoptions "/MD"
 			optimize "On"
 
 project "Sandbox"
@@ -110,13 +113,16 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "REMC_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "REMC_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "REMC_DIST"
+		buildoptions "/MD"
 		optimize "On"
 

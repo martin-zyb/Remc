@@ -83,7 +83,7 @@
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -158,6 +158,8 @@
     <ClInclude Include="src\Remc\Events\Event.h" />
     <ClInclude Include="src\Remc\Events\KeyEvent.h" />
     <ClInclude Include="src\Remc\Events\MouseEvent.h" />
+    <ClInclude Include="src\Remc\Layer.h" />
+    <ClInclude Include="src\Remc\LayerStack.h" />
     <ClInclude Include="src\Remc\Log.h" />
     <ClInclude Include="src\Remc\Window.h" />
     <ClInclude Include="src\rcpch.h" />
@@ -165,6 +167,8 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Remc\Application.cpp" />
+    <ClCompile Include="src\Remc\Layer.cpp" />
+    <ClCompile Include="src\Remc\LayerStack.cpp" />
     <ClCompile Include="src\Remc\Log.cpp" />
     <ClCompile Include="src\rcpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

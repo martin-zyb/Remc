@@ -47,6 +47,8 @@
       <Filter>Remc</Filter>
     </ClInclude>
     <ClInclude Include="src\rcpch.h" />
+    <ClInclude Include="src\Remc\Layer.h" />
+    <ClInclude Include="src\Remc\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -59,5 +61,7 @@
       <Filter>Remc</Filter>
     </ClCompile>
     <ClCompile Include="src\rcpch.cpp" />
+    <ClCompile Include="src\Remc\Layer.cpp" />
+    <ClCompile Include="src\Remc\LayerStack.cpp" />
   </ItemGroup>
 </Project>
