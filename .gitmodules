@@ -4,3 +4,6 @@
 [submodule "Remc/vendor/GLFW"]
 	path = Remc/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Remc/vendor/imgui"]
+	path = Remc/vendor/imgui
+	url = https://gitclone.com/github.com/TheCherno/imgui

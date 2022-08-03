@@ -12,9 +12,9 @@ Sandbox is the main program that calls and debugs Remc
 ## Multi platform
 Use premake to support multiple platforms  
 ### Generator
-premake5.exe 
+premake5.exe  
 ### License
-LICENSE.txt 
+LICENSE.txt  
 ### File
 premake5.lua (source file)  
 GeneratePorjects.bat (generate file : Currently only windows is supported)  
