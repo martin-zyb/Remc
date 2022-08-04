@@ -18,6 +18,8 @@ namespace Remc
 		bool m_Running = true;
 		bool OnWindowClose(WindowCloseEvent& e);
 		LayerStack m_LayerStack;
+
+		static Application* s_Instance;
 	public:
 		Application();
 		virtual ~Application();
@@ -28,6 +30,9 @@ namespace Remc
 
 		void PushLayer(Layer* layer);
 		void PushOverLayer(Layer* layer);
+
+		inline static Application& Get() { return *s_Instance; }
+		inline Window& GetWindow() { return *m_Window; }
 	};
 
 	// To be define in CLIENT
