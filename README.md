@@ -25,4 +25,4 @@ GeneratePorjects.bat (generate file : Currently only windows is supported)
 4. GLad : https://github.com/dav1dde/glad-web  
 5. ImGui : https://github.com/TheCherno/imgui  
 ## Last
-Thank you for your support of this project  
+Thank you for your support of this project.  
