@@ -1,16 +1,16 @@
 # Remc
-Remc Engine  
+Remc Engine.  
 ## Introduction
-This engine is the foundation for the next project  
-Mainly written by visual studio (2019)  
+This engine is the foundation for the next project.  
+Mainly written by visual studio. (2019)  
 ## Content
 ### Remc
-Remc is the main module of this project  
-It is a dynamic link library (Remc.dll)  
+Remc is the main module of this project.  
+It is a dynamic link library. (Remc.dll)  
 #### Sandbox
-Sandbox is the main program that calls and debugs Remc  
+Sandbox is the main program that calls and debugs Remc.  
 ## Multi platform
-Use premake to support multiple platforms  
+Use premake to support multiple platforms.  
 ### Generator
 premake5.exe  
 ### License
