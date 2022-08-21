@@ -74,6 +74,6 @@
     </ClCompile>
     <ClCompile Include="src\rcpch.cpp" />
     <ClCompile Include="src\Remc\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>

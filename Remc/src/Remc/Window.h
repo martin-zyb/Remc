@@ -15,8 +15,8 @@ namespace Remc
 		unsigned int Height;
 
 		WindowProps(const std::string& title = "Remc Engine",
-			unsigned int width = 960,
-			unsigned int height = 540)
+			unsigned int width = 1120,
+			unsigned int height = 630)
 			: Title(title), Width(width), Height(height) {}
 
 	};

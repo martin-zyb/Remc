@@ -1,9 +1,9 @@
-[submodule "Remc/vendor/spdlog"]
-	path = Remc/vendor/spdlog
+[submodule "Hazel/vendor/spdlog"]
+	path = Hazel/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "Remc/vendor/GLFW"]
-	path = Remc/vendor/GLFW
+[submodule "Hazel/vendor/GLFW"]
+	path = Hazel/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
-[submodule "Remc/vendor/imgui"]
-	path = Remc/vendor/imgui
-	url = https://gitclone.com/github.com/TheCherno/imgui
+[submodule "Hazel/vendor/imgui"]
+	path = Hazel/vendor/imgui
+	url = https://github.com/TheCherno/imgui
