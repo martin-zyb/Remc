@@ -61,7 +61,7 @@ namespace Remc
 
 	void ImGuiLayer::OnDetach()
 	{
-
+		return;
 	}
 
 	void ImGuiLayer::OnUpdate()
