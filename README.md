@@ -1,5 +1,6 @@
 # Remc
 Remc Engine.  
+This project will stop updating for a while.  
 ## Introduction
 This engine is the foundation for the next project.  
 Mainly written by visual studio. (2022)  
