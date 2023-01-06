@@ -7,6 +7,8 @@ workspace "Remc"
 		"Release",
 		"Dist"
 	}
+	
+startproject "Sandbox" 
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}/%{cfg.architecture}"
 
@@ -15,14 +17,18 @@ IncludeDir["GLFW"] = "Remc/vendor/GLFW/include"
 IncludeDir["GLad"] = "Remc/vendor/GLad/include"
 IncludeDir["ImGui"] = "Remc/vendor/imgui"
 
-include "Remc/vendor/GLFW"
-include "Remc/vendor/GLad"
-include "Remc/vendor/imgui"
+group "Dependencies"
+	include "Remc/vendor/GLFW"
+	include "Remc/vendor/GLad"
+	include "Remc/vendor/imgui"
+
+group ""
 
 project "Remc"
 		location "Remc"
 		kind "SharedLib"
 		language "C++"
+		staticruntime "off"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -55,7 +61,6 @@ project "Remc"
 
 		filter "system:windows"
 			cppdialect "C++17"
-			staticruntime "On"
 			systemversion "latest"
 
 			defines
@@ -67,22 +72,22 @@ project "Remc"
 
 			postbuildcommands
 			{
-				("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+				("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 			}
 
 		filter "configurations:Debug"
 			defines "REMC_DEBUG"
-			buildoptions "/MDd"
+			runtime "Debug"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "REMC_RELEASE"
-			buildoptions "/MD"
+			runtime "Release"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "REMC_DIST"
-			buildoptions "/MD"
+			runtime "Release"
 			optimize "On"
 
 project "Sandbox"
@@ -122,16 +127,16 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "REMC_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "REMC_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "REMC_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
