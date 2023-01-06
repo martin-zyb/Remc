@@ -56,7 +56,7 @@ namespace Remc
 		io.KeyMap[ImGuiKey_Y] = GLFW_KEY_Y;
 		io.KeyMap[ImGuiKey_Z] = GLFW_KEY_Z;
 
-		ImGui_ImplOpenGL3_Init("#version 450");
+		ImGui_ImplOpenGL3_Init("#version 410");
 	}
 
 	void ImGuiLayer::OnDetach()
@@ -94,7 +94,7 @@ namespace Remc
 		dispatcher.Dispatch<MouseScrolledEvent>(REMC_BIND_EVENT_FN(ImGuiLayer::OnMouseScrolledEvent));
 		dispatcher.Dispatch<KeyPressedEvent>(REMC_BIND_EVENT_FN(ImGuiLayer::OnKeyPressedEvent));
 		dispatcher.Dispatch<KeyReleasedEvent>(REMC_BIND_EVENT_FN(ImGuiLayer::OnKeyReleasedEvent));
-		//dispatcher.Dispatch<KeyTypedEvent>(REMC_BIND_EVENT_FN(ImGuiLayer::OnKeyTypedEvent));
+		dispatcher.Dispatch<KeyTypedEvent>(REMC_BIND_EVENT_FN(ImGuiLayer::OnKeyTypedEvent));
 		dispatcher.Dispatch<WindowResizeEvent>(REMC_BIND_EVENT_FN(ImGuiLayer::OnWindowResizeEvent));
 		return;
 	}

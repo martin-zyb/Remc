@@ -10,6 +10,10 @@
 	#error Remc only support Windows !
 #endif
 
+#ifdef HZ_DEBUG
+	#define HZ_ENABLE_ASSERTS
+#endif
+
 #ifdef REMC_ENABLE_ASSERTS
 	#define REMC_ASSERT(x, ...) { if(!(x)) { REMC_ERROR("Assertion Failed : {0}", __VA_ARGS__); __debugbreak();} }
 	#define REMC_CORE_ASSERT(x, ...) { if(!(x)) REMC_CORE_ERROR("Assertion Failed : {0}", __VA_ARGS__); __debugbreak();} }

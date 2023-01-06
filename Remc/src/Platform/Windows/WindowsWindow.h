@@ -31,7 +31,7 @@ namespace Remc
 		{
 			std::string Title;
 			unsigned int Width, Height;
-			bool VSyns;
+			bool VSync;
 
 			EventCallbackFn EventCallback;
 		};

@@ -3,8 +3,8 @@
 #include "Platform/Windows/WindowsWindow.h" 
 
 #include "Remc/Events/ApplicationEvent.h"
-#include "Remc/Events/KeyEvent.h"
 #include "Remc/Events/MouseEvent.h"
+#include "Remc/Events/KeyEvent.h"
 
 #include <glad/glad.h>
 
@@ -20,7 +20,7 @@ namespace Remc
 
 	bool WindowsWindow::IsVSync() const
 	{
-		return m_Data.VSyns;
+		return m_Data.VSync;
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
@@ -34,7 +34,7 @@ namespace Remc
 			glfwSwapInterval(0);
 		}
 
-		m_Data.VSyns = enabled;
+		m_Data.VSync = enabled;
 	}
 
 	void WindowsWindow::Shutdown()
@@ -73,10 +73,10 @@ namespace Remc
 
 		if (!s_GLFWInitialized)
 		{
-			// T000 : glfwTerminate on system shutdown
+			// TODO: glfwTerminate on system shutdown
 			int success = glfwInit();
-			REMC_CORE_ASSERT(success, "Could not intialize GLFW !");
-
+			REMC_CORE_ASSERT(success, "Could not intialize GLFW!");
+			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}
 
@@ -87,7 +87,7 @@ namespace Remc
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
-		// Set GLFW Callback
+		// Set GLFW callbacks
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 		{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
@@ -133,12 +133,12 @@ namespace Remc
 		});
 
 		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode)
-			{
-				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-				KeyTypedEvent event(keycode);
-				data.EventCallback(event);
-			});
+			KeyTypedEvent event(keycode);
+			data.EventCallback(event);
+		});
 
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)
 		{
@@ -174,7 +174,7 @@ namespace Remc
 		{
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-			MouseScrolledEvent event((float)xPos, (float)yPos);
+			MouseMovedEvent event((float)xPos, (float)yPos);
 			data.EventCallback(event);
 		});
 
