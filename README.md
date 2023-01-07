@@ -1,8 +1,7 @@
 # Remc
 Remc Engine.  
 ## Introduction
-This engine is the foundation for the next project.  
-Mainly written by visual studio. (2022)  
+This is a game engine based on OpenGL, mainly written in C++.  
 ## Content
 ### Remc
 Remc is the main module of this project.  
