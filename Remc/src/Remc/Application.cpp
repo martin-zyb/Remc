@@ -1,6 +1,8 @@
 #include "rcpch.h"
 #include "Application.h"
 
+#include "Remc/Input.h"
+
 #include <glad/glad.h>
 
 namespace Remc
@@ -64,6 +66,9 @@ namespace Remc
 			{
 				layer->OnUpdate();
 			}
+
+			auto [x, y] = Input::GetMousePosition();
+			REMC_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}

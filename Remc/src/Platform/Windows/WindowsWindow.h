@@ -22,6 +22,7 @@ namespace Remc
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
 	private:
+		inline virtual void* GetNativeWindow() const { return m_Window; }
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
 	private:
