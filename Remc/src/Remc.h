@@ -6,6 +6,10 @@
 #include "Remc/Layer.h"
 #include "Remc/Log.h"
 
+#include "Remc/Input.h"
+#include "Remc/KeyCodes.h"
+#include "Remc/MouseButtonCodes.h"
+
 #include "Remc/ImGui/ImGuiLayer.h"
 
 //..........Entry Point...........................

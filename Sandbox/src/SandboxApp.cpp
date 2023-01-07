@@ -11,12 +11,23 @@ public:
 
 	void OnUpdate() override
 	{
-		REMC_INFO("ExampleLayer::Update");
+		if (Remc::Input::IsKeyPressed(REMC_KEY_TAB))
+		{
+			REMC_TRACE("Tab key is pressed (poll)!");
+		}
 	}
 
 	void OnEvent(Remc::Event& event) override
 	{
-		REMC_TRACE("{0}", event);
+		if (event.GetEventType() == Remc::EventType::KeyPressed)
+		{
+			Remc::KeyPressedEvent& e = (Remc::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == REMC_KEY_TAB)
+			{
+				REMC_TRACE("Tab key is pressed (event)!");
+			}
+			REMC_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 
 };
