@@ -10,7 +10,7 @@ workspace "Remc"
 	
 startproject "Sandbox" 
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}/%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Remc/vendor/GLFW/include"
