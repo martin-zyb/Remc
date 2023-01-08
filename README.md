@@ -15,13 +15,14 @@ premake5.exe
 ### License
 LICENSE.txt  
 ### File
-premake5.lua (source file)  
-GeneratePorjects.bat (generate file : Currently only windows is supported)  
+premake5.lua  
+GeneratePorjects.bat (Currently only windows is supported)  
 ## External warehouse/tools
 1. Spdlog : https://github.com/gabime/spdlog  
 2. premake : https://github.com/premake  
 3. GLFW : https://github.com/TheCherno/glfw  
 4. GLad : https://github.com/dav1dde/glad-web  
 5. ImGui : https://github.com/TheCherno/imgui  
+6. glm : https://github.com/g-truc/glm  
 ## Last
 Thank you for your support of this project.  
