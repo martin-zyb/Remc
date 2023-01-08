@@ -7,6 +7,7 @@
 #include "Events/Event.h"
 #include "Remc/Events/ApplicationEvent.h"
 
+#include "Remc/ImGui/ImGuiLayer.h"
 
 namespace Remc
 {
@@ -15,6 +16,7 @@ namespace Remc
 	{
 	private:
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		bool OnWindowClose(WindowCloseEvent& e);
 		LayerStack m_LayerStack;
@@ -35,7 +37,7 @@ namespace Remc
 		inline Window& GetWindow() { return *m_Window; }
 	};
 
-	// To be define in CLIENT
+	// To be defined in CLIENT
 	Application* CreateApplication();
 
 }

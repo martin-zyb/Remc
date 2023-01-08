@@ -112,6 +112,7 @@ project "Sandbox"
 	{
 		"Remc/vendor/spdlog/include",
 		"Remc/src",
+		"Remc/vendor",
 		"%{IncludeDir.glm}"
 	}
 
