@@ -1,11 +1,11 @@
-[submodule "REMC/vendor/spdlog"]
-	path = REMC/vendor/spdlog
+[submodule "Remc/vendor/spdlog"]
+	path = Remc/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "REMC/vendor/GLFW"]
-	path = REMC/vendor/GLFW
+[submodule "Remc/vendor/GLFW"]
+	path = Remc/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
-[submodule "REMC/vendor/imgui"]
-	path = REMC/vendor/imgui
+[submodule "Remc/vendor/imgui"]
+	path = Remc/vendor/imgui
 	url = https://github.com/TheCherno/imgui
 [submodule "Remc/vendor/glm"]
 	path = Remc/vendor/glm

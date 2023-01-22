@@ -5,8 +5,7 @@
 #include "Remc/Core.h"
 #include "Remc/Events/Event.h"
 
-namespace Remc
-{
+namespace Remc {
 
 	struct WindowProps
 	{
@@ -15,13 +14,14 @@ namespace Remc
 		unsigned int Height;
 
 		WindowProps(const std::string& title = "Remc Engine",
-			unsigned int width = 1280,
-			unsigned int height = 720)
-			: Title(title), Width(width), Height(height) {}
-
+			        unsigned int width = 1280,
+			        unsigned int height = 720)
+			: Title(title), Width(width), Height(height)
+		{
+		}
 	};
 
-	// Interface representing a desktop system basic Window
+	// Interface representing a desktop system based Window
 	class REMC_API Window
 	{
 	public:
@@ -42,7 +42,6 @@ namespace Remc
 		virtual void* GetNativeWindow() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());
-
 	};
 
 }

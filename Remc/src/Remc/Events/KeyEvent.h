@@ -2,15 +2,14 @@
 
 #include "Event.h"
 
-namespace Remc
-{
+namespace Remc {
+
 	class REMC_API KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
-
 	protected:
 		KeyEvent(int keycode)
 			: m_KeyCode(keycode) {}
@@ -20,8 +19,6 @@ namespace Remc
 
 	class REMC_API KeyPressedEvent : public KeyEvent
 	{
-	private:
-		int m_RepeatCount;
 	public:
 		KeyPressedEvent(int keycode, int repeatCount)
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
@@ -31,11 +28,13 @@ namespace Remc
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "KeyPressesEvent : " << m_KeyCode << "(" << m_RepeatCount << " repeats)";
+			ss << "KeyPressedEvent: " << m_KeyCode << " (" << m_RepeatCount << " repeats)";
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed)
+	private:
+		int m_RepeatCount;
 	};
 
 	class REMC_API KeyReleasedEvent : public KeyEvent
@@ -47,7 +46,7 @@ namespace Remc
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "KeyReleasedEvent : " << m_KeyCode;
+			ss << "KeyReleasedEvent: " << m_KeyCode;
 			return ss.str();
 		}
 
@@ -69,5 +68,4 @@ namespace Remc
 
 		EVENT_CLASS_TYPE(KeyTyped)
 	};
-
 }

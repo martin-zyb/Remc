@@ -2,18 +2,14 @@
 
 #include "Remc/Layer.h"
 
+#include "Remc/Events/ApplicationEvent.h"
 #include "Remc/Events/KeyEvent.h"
 #include "Remc/Events/MouseEvent.h"
-#include "Remc/Events/ApplicationEvent.h"
 
-namespace Remc
-{
+namespace Remc {
 
 	class REMC_API ImGuiLayer : public Layer
 	{
-	private:
-		float m_Time = 0.0f;
-
 	public:
 		ImGuiLayer();
 		~ImGuiLayer();
@@ -24,6 +20,8 @@ namespace Remc
 
 		void Begin();
 		void End();
+	private:
+		float m_Time = 0.0f;
 	};
 
 }

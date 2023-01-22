@@ -1,5 +1,6 @@
 workspace "Remc"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -7,97 +8,95 @@ workspace "Remc"
 		"Release",
 		"Dist"
 	}
-	
-startproject "Sandbox" 
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Remc/vendor/GLFW/include"
-IncludeDir["GLad"] = "Remc/vendor/GLad/include"
+IncludeDir["Glad"] = "Remc/vendor/Glad/include"
 IncludeDir["ImGui"] = "Remc/vendor/imgui"
 IncludeDir["glm"] = "Remc/vendor/glm"
 
-group "Dependencies"
-	include "Remc/vendor/GLFW"
-	include "Remc/vendor/GLad"
-	include "Remc/vendor/imgui"
-
-group ""
+include "Remc/vendor/GLFW"
+include "Remc/vendor/Glad"
+include "Remc/vendor/imgui"
 
 project "Remc"
-		location "Remc"
-		kind "SharedLib"
-		language "C++"
-		staticruntime "off"
+	location "Remc"
+	kind "StaticLib"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
-		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-		pchheader "rcpch.h"
-		pchsource "Remc/src/rcpch.cpp"
+	pchheader "hzpch.h"
+	pchsource "Remc/src/hzpch.cpp"
 
-		files
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
+	}
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
+
+	includedirs
+	{
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
+	}
+
+	links 
+	{ 
+		"GLFW",
+		"Glad",
+		"ImGui",
+		"opengl32.lib"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+		defines
 		{
-			"%{prj.name}/src/**.h",
-			"%{prj.name}/src/**.cpp",
-			"%{prj.name}/vendor/glm/glm/**.hpp",
-			"%{prj.name}/vendor/glm/glm/**.inl"
+			"HZ_PLATFORM_WINDOWS",
+			"HZ_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
-		includedirs
-		{
-			"%{prj.name}/src",
-			"%{prj.name}/vendor/spdlog/include",
-			"%{IncludeDir.GLFW}",
-			"%{IncludeDir.GLad}",
-			"%{IncludeDir.ImGui}",
-			"%{IncludeDir.glm}"
-		}
+	filter "configurations:Debug"
+		defines "HZ_DEBUG"
+		runtime "Debug"
+		symbols "on"
 
-		links
-		{
-			"GLFW",
-			"GLad",
-			"ImGui",
-			"opengl32.lib"
-		}
+	filter "configurations:Release"
+		defines "HZ_RELEASE"
+		runtime "Release"
+		optimize "on"
 
-		filter "system:windows"
-			cppdialect "C++17"
-			systemversion "latest"
-
-			defines
-			{
-				"REMC_PLATFORM_WINDOWS",
-				"REMC_BUILD_DLL",
-				"GLFW_INCLUDE_NONE"
-			}
-
-			postbuildcommands
-			{
-				("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-			}
-
-		filter "configurations:Debug"
-			defines "REMC_DEBUG"
-			runtime "Debug"
-			symbols "On"
-
-		filter "configurations:Release"
-			defines "REMC_RELEASE"
-			runtime "Release"
-			optimize "On"
-
-		filter "configurations:Dist"
-			defines "REMC_DIST"
-			runtime "Release"
-			optimize "On"
+	filter "configurations:Dist"
+		defines "HZ_DIST"
+		runtime "Release"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -122,27 +121,24 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
 		{
-			"REMC_PLATFORM_WINDOWS"
+			"HZ_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
-		defines "REMC_DEBUG"
+		defines "HZ_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
-		defines "REMC_RELEASE"
+		defines "HZ_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
-		defines "REMC_DIST"
+		defines "HZ_DIST"
 		runtime "Release"
-		optimize "On"
-
+		optimize "on"

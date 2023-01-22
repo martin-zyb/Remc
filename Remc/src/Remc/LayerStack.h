@@ -5,14 +5,10 @@
 
 #include <vector>
 
-namespace Remc
-{
+namespace Remc {
 
 	class REMC_API LayerStack
 	{
-	private:
-		std::vector<Layer*> m_Layers;
-		unsigned int m_LayerInsertIndex = 0;
 	public:
 		LayerStack();
 		~LayerStack();
@@ -24,7 +20,9 @@ namespace Remc
 
 		std::vector<Layer*>::iterator begin() { return m_Layers.begin(); }
 		std::vector<Layer*>::iterator end() { return m_Layers.end(); }
-
+	private:
+		std::vector<Layer*> m_Layers;
+		unsigned int m_LayerInsertIndex = 0;
 	};
 
 }

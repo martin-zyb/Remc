@@ -1,6 +1,6 @@
 #pragma once
 
-// for use by Remc Applications
+// For use by Remc applications
 
 #include "Remc/Application.h"
 #include "Remc/Layer.h"
@@ -12,6 +12,6 @@
 
 #include "Remc/ImGui/ImGuiLayer.h"
 
-//..........Entry Point...........................
+// ---Entry Point---------------------
 #include "Remc/EntryPoint.h"
-//...........................................................
+// -----------------------------------

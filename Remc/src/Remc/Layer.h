@@ -1,12 +1,9 @@
 #pragma once
 
-#include "rcpch.h"
-
 #include "Remc/Core.h"
 #include "Remc/Events/Event.h"
 
-namespace Remc
-{
+namespace Remc {
 
 	class REMC_API Layer
 	{
@@ -20,6 +17,7 @@ namespace Remc
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 
+		inline const std::string& GetName() const { return m_DebugName; }
 	protected:
 		std::string m_DebugName;
 	};

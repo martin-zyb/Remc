@@ -2,14 +2,10 @@
 
 #include "Event.h"
 
-namespace Remc
-{
+namespace Remc {
 
 	class REMC_API WindowResizeEvent : public Event
 	{
-	private:
-		unsigned int m_Width, m_Height;
-
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height)
 			: m_Width(width), m_Height(height) {}
@@ -20,13 +16,14 @@ namespace Remc
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "WindowResizeEvent : " << m_Width << " , " << m_Height;
+			ss << "WindowResizeEvent: " << m_Width << ", " << m_Height;
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(WindowResize)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
-
+	private:
+		unsigned int m_Width, m_Height;
 	};
 
 	class REMC_API WindowCloseEvent : public Event

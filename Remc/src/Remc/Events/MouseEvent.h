@@ -2,12 +2,10 @@
 
 #include "Event.h"
 
-namespace Remc
-{
+namespace Remc {
+
 	class REMC_API MouseMovedEvent : public Event
 	{
-	private:
-		float m_MouseX, m_MouseY;
 	public:
 		MouseMovedEvent(float x, float y)
 			: m_MouseX(x), m_MouseY(y) {}
@@ -18,47 +16,49 @@ namespace Remc
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseMovedEvent : " << m_MouseX << " , " << m_MouseY;
+			ss << "MouseMovedEvent: " << m_MouseX << ", " << m_MouseY;
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+	private:
+		float m_MouseX, m_MouseY;
 	};
 
 	class REMC_API MouseScrolledEvent : public Event
 	{
-	private:
-		float m_XOffset, m_YOffset;
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
 			: m_XOffset(xOffset), m_YOffset(yOffset) {}
 
-			inline float GetXOffset() const { return m_XOffset; }
-			inline float GetYOffset() const { return m_YOffset; }
+		inline float GetXOffset() const { return m_XOffset; }
+		inline float GetYOffset() const { return m_YOffset; }
 
-			std::string ToString() const override
-			{
-				std::stringstream ss;
-				ss << "MouseScrolledEvent : " << GetXOffset() << " , " << GetYOffset();
-				return ss.str();
-			}
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "MouseScrolledEvent: " << GetXOffset() << ", " << GetYOffset();
+			return ss.str();
+		}
 
-			EVENT_CLASS_TYPE(MouseScrolled)
-			EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+		EVENT_CLASS_TYPE(MouseScrolled)
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+	private:
+		float m_XOffset, m_YOffset;
 	};
 
 	class REMC_API MouseButtonEvent : public Event
 	{
+	public:
+		inline int GetMouseButton() const { return m_Button; }
+
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	protected:
 		MouseButtonEvent(int button)
 			: m_Button(button) {}
 
 		int m_Button;
-	public:
-		inline int GetMouseButton() const { return m_Button; }
-
-		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	};
 
 	class REMC_API MouseButtonPressedEvent : public MouseButtonEvent
@@ -70,7 +70,7 @@ namespace Remc
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseButtonPressedEvent : " << m_Button;
+			ss << "MouseButtonPressedEvent: " << m_Button;
 			return ss.str();
 		}
 
@@ -86,7 +86,7 @@ namespace Remc
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseButtonReleasedEvent : " << m_Button;
+			ss << "MouseButtonReleasedEvent: " << m_Button;
 			return ss.str();
 		}
 

@@ -2,11 +2,10 @@
 #include "WindowsInput.h"
 
 #include "Remc/Application.h"
-
 #include <GLFW/glfw3.h>
 
-namespace Remc
-{
+namespace Remc {
+
 	Input* Input::s_Instance = new WindowsInput();
 
 	bool WindowsInput::IsKeyPressedImpl(int keycode)
@@ -34,13 +33,14 @@ namespace Remc
 
 	float WindowsInput::GetMouseXImpl()
 	{
-		auto [x, y] = GetMousePositionImpl();
+		auto[x, y] = GetMousePositionImpl();
 		return x;
 	}
 
 	float WindowsInput::GetMouseYImpl()
 	{
-		auto [x, y] = GetMousePositionImpl();
+		auto[x, y] = GetMousePositionImpl();
 		return y;
 	}
+
 }
