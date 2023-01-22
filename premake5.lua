@@ -18,9 +18,12 @@ IncludeDir["Glad"] = "Remc/vendor/Glad/include"
 IncludeDir["ImGui"] = "Remc/vendor/imgui"
 IncludeDir["glm"] = "Remc/vendor/glm"
 
-include "Remc/vendor/GLFW"
-include "Remc/vendor/Glad"
-include "Remc/vendor/imgui"
+group "Dependencies"
+	include "Remc/vendor/GLFW"
+	include "Remc/vendor/GLad"
+	include "Remc/vendor/imgui"
+
+group ""
 
 project "Remc"
 	location "Remc"
@@ -32,8 +35,8 @@ project "Remc"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	pchheader "hzpch.h"
-	pchsource "Remc/src/hzpch.cpp"
+	pchheader "rcpch.h"
+	pchsource "Remc/src/rcpch.cpp"
 
 	files
 	{
@@ -71,23 +74,23 @@ project "Remc"
 
 		defines
 		{
-			"HZ_PLATFORM_WINDOWS",
-			"HZ_BUILD_DLL",
+			"REMC_PLATFORM_WINDOWS",
+			"REMC_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "REMC_DEBUG"
 		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "REMC_RELEASE"
 		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "REMC_DIST"
 		runtime "Release"
 		optimize "on"
 
@@ -125,20 +128,20 @@ project "Sandbox"
 
 		defines
 		{
-			"HZ_PLATFORM_WINDOWS"
+			"REMC_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "REMC_DEBUG"
 		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "REMC_RELEASE"
 		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "REMC_DIST"
 		runtime "Release"
 		optimize "on"
