@@ -10,6 +10,8 @@ namespace Remc
 	{
 	private:
 		GLFWwindow* m_WindowHandle;
+
+		std::string GLubyteToString(const unsigned char* glbyte);
 	public:
 		OpenGLContext(GLFWwindow* windowHandle);
 
