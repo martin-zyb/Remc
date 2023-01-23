@@ -8,9 +8,4 @@ namespace Remc {
 	{
 	}
 
-	Layer::~Layer()
-	{
-
-	}
-
 }
