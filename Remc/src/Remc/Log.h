@@ -25,11 +25,11 @@ namespace Remc {
 #define REMC_CORE_INFO(...)     ::Remc::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define REMC_CORE_WARN(...)     ::Remc::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define REMC_CORE_ERROR(...)    ::Remc::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define REMC_CORE_FATAL(...)    ::Remc::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define REMC_CORE_FATAL(...)    ::Remc::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
 #define REMC_TRACE(...)	      ::Remc::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define REMC_INFO(...)	      ::Remc::Log::GetClientLogger()->info(__VA_ARGS__)
 #define REMC_WARN(...)	      ::Remc::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define REMC_ERROR(...)	      ::Remc::Log::GetClientLogger()->error(__VA_ARGS__)
-#define REMC_FATAL(...)	      ::Remc::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define REMC_FATAL(...)	      ::Remc::Log::GetClientLogger()->critical(__VA_ARGS__)
