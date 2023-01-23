@@ -9,6 +9,8 @@
 
 #include "Remc/ImGui/ImGuiLayer.h"
 
+#include "Remc/Renderer/Shader.h"
+
 namespace Remc {
 
 	class REMC_API Application
@@ -36,7 +38,8 @@ namespace Remc {
 		LayerStack m_LayerStack;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
-	private:
+		std::unique_ptr<Shader> m_Shader;
+
 		static Application* s_Instance;
 	};
 
