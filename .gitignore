@@ -4,6 +4,8 @@
 bin/
 bin-int/
 
+!vendor/bin
+
 #file
 *.user
 *.vcxproj
