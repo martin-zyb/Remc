@@ -9,15 +9,11 @@
 
 #include "Remc/ImGui/ImGuiLayer.h"
 
-#include "Remc/Renderer/Shader.h"
-#include "Remc/Renderer/Buffer.h"
-#include "Remc/Renderer/VertexArray.h"
-
-#include "Remc/Renderer/OrthographicCamera.h"
+#include "Remc/Core/Timestep.h"
 
 namespace Remc {
 
-	class REMC_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -40,14 +36,6 @@ namespace Remc {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
 
 		static Application* s_Instance;
 	};
