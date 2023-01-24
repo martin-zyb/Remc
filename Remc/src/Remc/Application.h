@@ -13,6 +13,8 @@
 #include "Remc/Renderer/Buffer.h"
 #include "Remc/Renderer/VertexArray.h"
 
+#include "Remc/Renderer/OrthographicCamera.h"
+
 namespace Remc {
 
 	class REMC_API Application
@@ -44,6 +46,8 @@ namespace Remc {
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 
 		static Application* s_Instance;
 	};
