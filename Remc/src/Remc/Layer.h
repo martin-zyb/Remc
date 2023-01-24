@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Remc/Core.h"
+#include "Remc/Core/Timestep.h"
+
 #include "Remc/Events/Event.h"
 
 namespace Remc {
@@ -13,7 +15,7 @@ namespace Remc {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 
