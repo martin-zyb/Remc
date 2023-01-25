@@ -20,6 +20,7 @@
 
 #include "Remc/Renderer/Buffer.h"
 #include "Remc/Renderer/Shader.h"
+#include "Remc/Renderer/Texture.h"
 #include "Remc/Renderer/VertexArray.h"
 
 #include "Remc/Renderer/OrthographicCamera.h"

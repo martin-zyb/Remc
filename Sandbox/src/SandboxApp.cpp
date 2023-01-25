@@ -36,18 +36,19 @@ public:
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 		m_SquareVA.reset(Remc::VertexArray::Create());
 
-		float squareVertices[3 * 4] = {
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.5f,  0.5f, 0.0f,
-			-0.5f,  0.5f, 0.0f
+		float squareVertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
 		Remc::Ref<Remc::VertexBuffer> squareVB;
 		squareVB.reset(Remc::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
-			{ Remc::ShaderDataType::Float3, "a_Position" }
-			});
+			{ Remc::ShaderDataType::Float3, "a_Position" },
+			{ Remc::ShaderDataType::Float2, "a_TexCoord" }
+		});
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
@@ -125,6 +126,46 @@ public:
 		)";
 
 		m_FlatColorShader.reset(Remc::Shader::Create(flatShaderVertexSrc, flatShaderFragmentSrc));
+
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord;
+
+			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+
+			out vec2 v_TexCoord;
+
+			void main()
+			{
+				v_TexCoord = a_TexCoord;
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
+			}
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 color;
+
+			in vec2 v_TexCoord;
+			
+			uniform sampler2D u_Texture;
+
+			void main()
+			{
+				color = texture(u_Texture, v_TexCoord);
+			}
+		)";
+
+		m_TextureShader.reset(Remc::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+
+		m_Texture = Remc::Texture2D::Create("assets/textures/Checkerboard.png");
+
+		std::dynamic_pointer_cast<Remc::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Remc::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Remc::Timestep ts) override
@@ -192,10 +233,15 @@ public:
 				glm::vec3 pos(x * 0.11f + m_SquareMoveDistance.x, y * 0.11f + m_SquareMoveDistance.y, 0.0f);
 				glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
 				
-				Remc::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
+				if(Flat) Remc::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
 			}
 		}
-		Remc::Renderer::Submit(m_Shader, m_VertexArray);
+
+		m_Texture->Bind();
+		if (Texture) Remc::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
+		// Triangle
+		if (Triangle) Remc::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Remc::Renderer::EndScene();
 	}
@@ -203,7 +249,10 @@ public:
 	virtual void OnImGuiRender() override
 	{
 		ImGui::Begin("Settings");
-		ImGui::ColorEdit3("Square Color", glm::value_ptr(m_SquareColor));
+		ImGui::Checkbox("Triangle", &Triangle);
+		ImGui::Checkbox("Texture", &Texture);
+		ImGui::Checkbox("Flat", &Flat);
+		ImGui::ColorEdit3("Flat Color", glm::value_ptr(m_SquareColor));
 		ImGui::End();
 	}
 
@@ -216,8 +265,10 @@ private:
 	Remc::Ref<Remc::Shader> m_Shader;
 	Remc::Ref<Remc::VertexArray> m_VertexArray;
 
-	Remc::Ref<Remc::Shader> m_FlatColorShader;
+	Remc::Ref<Remc::Shader> m_FlatColorShader, m_TextureShader;
 	Remc::Ref<Remc::VertexArray> m_SquareVA;
+
+	Remc::Ref<Remc::Texture2D> m_Texture;
 
 	Remc::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
@@ -230,6 +281,8 @@ private:
 	float m_SquareMoveSpeed = 1.0f;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
+
+	bool Triangle, Texture, Flat;
 };
 
 class Sandbox : public Remc::Application
