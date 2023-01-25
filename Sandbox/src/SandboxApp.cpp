@@ -21,7 +21,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<Remc::VertexBuffer> vertexBuffer;
+		Remc::Ref<Remc::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Remc::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Remc::BufferLayout layout = {
 			{ Remc::ShaderDataType::Float3, "a_Position" },
@@ -31,7 +31,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Remc::IndexBuffer> indexBuffer;
+		Remc::Ref<Remc::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Remc::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 		m_SquareVA.reset(Remc::VertexArray::Create());
@@ -43,7 +43,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<Remc::VertexBuffer> squareVB;
+		Remc::Ref<Remc::VertexBuffer> squareVB;
 		squareVB.reset(Remc::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
 			{ Remc::ShaderDataType::Float3, "a_Position" }
@@ -51,7 +51,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Remc::IndexBuffer> squareIB;
+		Remc::Ref<Remc::IndexBuffer> squareIB;
 		squareIB.reset(Remc::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -213,11 +213,11 @@ public:
 	}
 
 private:
-	std::shared_ptr<Remc::Shader> m_Shader;
-	std::shared_ptr<Remc::VertexArray> m_VertexArray;
+	Remc::Ref<Remc::Shader> m_Shader;
+	Remc::Ref<Remc::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Remc::Shader> m_FlatColorShader;
-	std::shared_ptr<Remc::VertexArray> m_SquareVA;
+	Remc::Ref<Remc::Shader> m_FlatColorShader;
+	Remc::Ref<Remc::VertexArray> m_SquareVA;
 
 	Remc::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
