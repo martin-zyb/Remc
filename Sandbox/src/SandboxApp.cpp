@@ -163,6 +163,7 @@ public:
 		m_TextureShader.reset(Remc::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = Remc::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_LogoTexture = Remc::Texture2D::Create("assets/textures/Logo.png");
 
 		std::dynamic_pointer_cast<Remc::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Remc::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -240,6 +241,9 @@ public:
 		m_Texture->Bind();
 		if (Texture) Remc::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
+		m_LogoTexture->Bind();
+		if (LogoTexture) Remc::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
 		// Triangle
 		if (Triangle) Remc::Renderer::Submit(m_Shader, m_VertexArray);
 
@@ -250,9 +254,16 @@ public:
 	{
 		ImGui::Begin("Settings");
 		ImGui::Checkbox("Triangle", &Triangle);
-		ImGui::Checkbox("Texture", &Texture);
-		ImGui::Checkbox("Flat", &Flat);
-		ImGui::ColorEdit3("Flat Color", glm::value_ptr(m_SquareColor));
+		if (ImGui::CollapsingHeader("Textures"))
+		{
+			ImGui::Checkbox("BasicTexture", &Texture);
+			ImGui::Checkbox("LogoTexture", &LogoTexture);
+		}
+		if (ImGui::CollapsingHeader("Flats"))
+		{
+			ImGui::Checkbox("Flat", &Flat);
+			ImGui::ColorEdit3("Flat Color", glm::value_ptr(m_SquareColor));
+		}
 		ImGui::End();
 	}
 
@@ -268,7 +279,7 @@ private:
 	Remc::Ref<Remc::Shader> m_FlatColorShader, m_TextureShader;
 	Remc::Ref<Remc::VertexArray> m_SquareVA;
 
-	Remc::Ref<Remc::Texture2D> m_Texture;
+	Remc::Ref<Remc::Texture2D> m_Texture, m_LogoTexture;
 
 	Remc::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
@@ -282,7 +293,7 @@ private:
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 
-	bool Triangle, Texture, Flat;
+	bool Triangle, Texture, LogoTexture, Flat;
 };
 
 class Sandbox : public Remc::Application
