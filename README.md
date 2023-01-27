@@ -5,7 +5,6 @@ This is a game engine based on OpenGL, mainly written in C++.
 ## Content
 ### Remc
 Remc is the main module of this project.  
-It is a dynamic link library. (Remc.dll)  
 #### Sandbox
 Sandbox is the main program that calls and debugs Remc.  
 ## Main features to come
