@@ -1,5 +1,8 @@
 # Remc
 Remc Engine.  
+
+![REMC](/Resources/Branding/REMC_Logo.png?raw=true "REMC")
+
 ## Introduction
 This is a game engine based on OpenGL, mainly written in C++.  
 ## Content
