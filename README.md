@@ -8,21 +8,24 @@ Remc is the main module of this project.
 It is a dynamic link library. (Remc.dll)  
 #### Sandbox
 Sandbox is the main program that calls and debugs Remc.  
-## Multi platform
-Use premake to support multiple platforms.  
-### Generator
-premake5.exe  
-### License
-LICENSE.txt  
-### File
-premake5.lua  
-GeneratePorjects.bat (Currently only windows is supported)  
+## Main features to come
+- Fast 2D rendering (UI, particles, sprites, etc.)
+- High-fidelity Physically-Based 3D rendering (this will be expanded later, 2D to come first)
+- Support for Mac, Linux, Android and iOS
+    - Native rendering API support (DirectX, Vulkan, Metal)
+- Fully featured viewer and editor applications
+- Fully scripted interaction and behavior
+- Integrated 3rd party 2D and 3D physics engine
+- Procedural terrain and world generation
+- Artificial Intelligence
+- Audio system
 ## External warehouse/tools
-1. Spdlog : https://github.com/gabime/spdlog  
-2. premake : https://github.com/premake  
-3. GLFW : https://github.com/TheCherno/glfw  
-4. GLad : https://github.com/dav1dde/glad-web  
-5. ImGui : https://github.com/TheCherno/imgui  
-6. glm : https://github.com/g-truc/glm  
+1. [Spdlog](https://github.com/gabime/spdlog).  
+2. [premake](https://github.com/premake).  
+3. [GLFW](https://github.com/TheCherno/glfw).  
+4. [GLad](https://github.com/dav1dde/glad-web).  
+5. [ImGui](https://github.com/TheCherno/imgui).  
+6. [glm](https://github.com/g-truc/glm).  
+7. [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h).  
 ## Last
 Thank you for your support of this project.  
