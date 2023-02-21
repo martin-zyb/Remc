@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Remc/Window.h"
+#include "Remc/Core/Window.h"
 #include "Remc/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

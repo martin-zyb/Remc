@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Remc/Core.h"
+#include "Remc/Core/Core.h"
 #include "Remc/Core/Timestep.h"
 
 #include "Remc/Events/Event.h"

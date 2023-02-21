@@ -2,16 +2,16 @@
 
 // For use by Remc applications
 
-#include "Remc/Application.h"
-#include "Remc/Layer.h"
-#include "Remc/Log.h"
+#include "Remc/Core/Application.h"
+#include "Remc/Core/Layer.h"
+#include "Remc/Core/Log.h"
 
 #include "Remc/Core/Timestep.h"
 
-#include "Remc/Input.h"
-#include "Remc/KeyCodes.h"
-#include "Remc/MouseButtonCodes.h"
-#include "Remc/OrthographicCameraController.h"
+#include "Remc/Core/Input.h"
+#include "Remc/Core/KeyCodes.h"
+#include "Remc/Core/MouseButtonCodes.h"
+#include "Remc/Renderer/OrthographicCameraController.h"
 
 #include "Remc/ImGui/ImGuiLayer.h"
 
@@ -28,5 +28,5 @@
 // -----------------------------------
 
 // ---Entry Point---------------------
-#include "Remc/EntryPoint.h"
+#include "Remc/Core/EntryPoint.h"
 // -----------------------------------

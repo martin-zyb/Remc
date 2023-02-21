@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Remc/Log.h"
+#include "Remc/Core/Log.h"
 
 #ifdef REMC_PLATFORM_WINDOWS
 	#include <Windows.h>

@@ -1,7 +1,7 @@
 #include "rcpch.h"
 #include "WindowsInput.h"
 
-#include "Remc/Application.h"
+#include "Remc/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Remc {

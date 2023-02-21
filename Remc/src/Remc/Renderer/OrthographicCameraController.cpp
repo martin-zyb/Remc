@@ -1,8 +1,8 @@
 #include "rcpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Remc/Input.h"
-#include "Remc/KeyCodes.h"
+#include "Remc/Core/Input.h"
+#include "Remc/Core/KeyCodes.h"
 
 namespace Remc
 {

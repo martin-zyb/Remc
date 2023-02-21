@@ -1,7 +1,7 @@
 #include "rcpch.h"
 #include "Application.h"
 
-#include "Remc/Log.h"
+#include "Remc/Core/Log.h"
 
 #include "Remc/Renderer/Renderer.h"
 

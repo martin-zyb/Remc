@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Remc/Input.h"
+#include "Remc/Core/Input.h"
 
 namespace Remc {
 
