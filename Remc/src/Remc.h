@@ -11,6 +11,7 @@
 #include "Remc/Input.h"
 #include "Remc/KeyCodes.h"
 #include "Remc/MouseButtonCodes.h"
+#include "Remc/OrthographicCameraController.h"
 
 #include "Remc/ImGui/ImGuiLayer.h"
 
