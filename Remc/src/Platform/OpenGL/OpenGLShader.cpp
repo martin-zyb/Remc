@@ -157,6 +157,7 @@ namespace Remc
 		for (auto id : glShaderIDs)
 		{
 			glDetachShader(program, id);
+			glDeleteShader(id);
 		}
 	}
 
