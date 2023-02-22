@@ -1,12 +1,16 @@
 [submodule "Remc/vendor/spdlog"]
 	path = Remc/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+	branch = v1.x
 [submodule "Remc/vendor/GLFW"]
 	path = Remc/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+	branch = master
 [submodule "Remc/vendor/imgui"]
 	path = Remc/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+	branch = docking
 [submodule "Remc/vendor/glm"]
 	path = Remc/vendor/glm
 	url = https://github.com/g-truc/glm
+	branch = master
