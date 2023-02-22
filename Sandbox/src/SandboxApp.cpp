@@ -91,9 +91,9 @@ public:
 			}
 		)";
 
-		m_Shader.reset(Remc::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Remc::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
-		std::string flatShaderVertexSrc = R"(
+		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_Position;
@@ -110,7 +110,7 @@ public:
 			}
 		)";
 
-		std::string flatShaderFragmentSrc = R"(
+		std::string flatColorShaderFragmentSrc = R"(
 			#version 330 core
 			
 			layout(location = 0) out vec4 color;
@@ -125,15 +125,15 @@ public:
 			}
 		)";
 
-		m_FlatColorShader.reset(Remc::Shader::Create(flatShaderVertexSrc, flatShaderFragmentSrc));
+		m_FlatColorShader = Remc::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-		m_TextureShader.reset(Remc::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Remc::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_LogoTexture = Remc::Texture2D::Create("assets/textures/Logo.png");
 
-		std::dynamic_pointer_cast<Remc::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Remc::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Remc::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Remc::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Remc::Timestep ts) override
@@ -180,11 +180,13 @@ public:
 			}
 		}
 
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
 		m_Texture->Bind();
-		if (Texture) Remc::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		if (Texture) Remc::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		m_LogoTexture->Bind();
-		if (LogoTexture) Remc::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		if (LogoTexture) Remc::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
 		if (Triangle) Remc::Renderer::Submit(m_Shader, m_VertexArray);
@@ -215,10 +217,11 @@ public:
 	}
 
 private:
+	Remc::ShaderLibrary m_ShaderLibrary;
 	Remc::Ref<Remc::Shader> m_Shader;
 	Remc::Ref<Remc::VertexArray> m_VertexArray;
 
-	Remc::Ref<Remc::Shader> m_FlatColorShader, m_TextureShader;
+	Remc::Ref<Remc::Shader> m_FlatColorShader;
 	Remc::Ref<Remc::VertexArray> m_SquareVA;
 
 	Remc::Ref<Remc::Texture2D> m_Texture, m_LogoTexture;
