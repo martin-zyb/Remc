@@ -28,5 +28,5 @@
 // -----------------------------------
 
 // ---Entry Point---------------------
-#include "Remc/Core/EntryPoint.h"
+// #include "Remc/Core/EntryPoint.h"
 // -----------------------------------

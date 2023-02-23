@@ -1,4 +1,5 @@
 #include <Remc.h>
+#include <Remc/Core/EntryPoint.h>
 
 #include "imgui/imgui.h"
 
@@ -7,13 +8,15 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include "Sandbox2D.h"
+
 class ExampleLayer : public Remc::Layer
 {
 public:
 	ExampleLayer()
 		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
-		m_VertexArray.reset(Remc::VertexArray::Create());
+		m_VertexArray = Remc::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
@@ -34,7 +37,7 @@ public:
 		Remc::Ref<Remc::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Remc::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
-		m_SquareVA.reset(Remc::VertexArray::Create());
+		m_SquareVA = Remc::VertexArray::Create();
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -241,7 +244,8 @@ class Sandbox : public Remc::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExampleLayer());
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 
 	~Sandbox()
