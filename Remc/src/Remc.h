@@ -17,6 +17,7 @@
 
 // ---Renderer------------------------
 #include "Remc/Renderer/Renderer.h"
+#include "Remc\Renderer\Renderer2D.h"
 #include "Remc/Renderer/RenderCommand.h"
 
 #include "Remc/Renderer/Buffer.h"
