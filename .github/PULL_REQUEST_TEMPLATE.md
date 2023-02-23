@@ -16,7 +16,7 @@ List of related issues/PRs this will solve:
 Issues this solves       | None or #number(s)
 Other PRs this solves    | None or #number(s)
 
-#### Proposed fix _(Make sure you've read [on how to contribute](https://github.com/martin-zyb/Remc/blob/master/.github/CONTRIBUTING.md) to Remc)_
+#### Proposed fix _(Make sure you've read [on how to contribute](https://github.com/martin-zyb/Remc/blob/main/.github/CONTRIBUTING.md) to Remc)_
 A short description of what this fix is and how it fixed the issue you described.
 
 #### Additional context
