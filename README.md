@@ -4,7 +4,7 @@ Remc Engine.
 **Due to academic problems, update is suspended, but maintenance continues**  
 Recovery time to be determined.  
 
-![REMC](/Resources/Branding/REMC_Logo.png?raw=true "REMC"#pic_center)
+![REMC](/Resources/Branding/REMC_Logo.png#pic_center?raw=true "REMC")
 
 ## Introduction
 This is a game engine based on OpenGL, mainly written in C++.  
