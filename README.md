@@ -1,5 +1,4 @@
-# Remc
-Remc Engine.  
+# Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE)
   
 **Due to academic problems, update is suspended, but maintenance continues**  
 Recovery time to be determined.  
