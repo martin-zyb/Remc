@@ -1,4 +1,4 @@
-# Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE) [ÖÐÎÄ](https://github.com/martin-zyb/Remc/README_CN.md)
+# Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE) [ä¸­æ–‡](https://github.com/martin-zyb/Remc/blob/main/README_CN.md)
   
 **Due to academic issues, update slowly and irregularly**  
 
