@@ -1,7 +1,6 @@
-# Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE)
+# Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE) [ÖÐÎÄ](https://github.com/martin-zyb/Remc/README_CN.md)
   
-**Due to academic problems, update is suspended, but maintenance continues**  
-Recovery time to be determined.  
+**Due to academic issues, update slowly and irregularly**  
 
 ![REMC](/Resources/Branding/REMC_Logo.png?raw=true "REMC")
 
