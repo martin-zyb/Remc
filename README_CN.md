@@ -1,28 +1,28 @@
-# Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE) [English](https://github.com/martin-zyb/Remc/README.md)
+# Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE) [English](https://github.com/martin-zyb/Remc/blob/main/README.md)
 
-**ÓÉÓÚÑ§ÒµÎÊÌâ£¬²»¶¨ÆÚµØ»ºÂı¸üĞÂ**
+**ç”±äºå­¦ä¸šé—®é¢˜ï¼Œä¸å®šæœŸåœ°ç¼“æ…¢æ›´æ–°**
 
 ![REMC](/Resources/Branding/REMC_Logo.png?raw=true "REMC")
 
-## ¸ÅÊö
-ÕâÊÇÒ»¸ö»ùÓÚC++ºÍOpenGLµÄÓÎÏ·ÒıÇæ
-## ÄÚÈİ
+## æ¦‚è¿°
+è¿™æ˜¯ä¸€ä¸ªåŸºäºC++å’ŒOpenGLçš„æ¸¸æˆå¼•æ“
+## å†…å®¹
 ### Remc
-RemcÊÇÕâ¸öÏîÄ¿µÄÖ÷ÒªÄ£¿é
+Remcæ˜¯è¿™ä¸ªé¡¹ç›®çš„ä¸»è¦æ¨¡å—
 ### Sandbox
-SandboxÊÇµ÷ÓÃºÍµ÷ÊÔRemcµÄÖ÷Òª³ÌĞò
-## ¼´½«ÍÆ³öµÄÖ÷Òª¹¦ÄÜ
--¿ìËÙ2DäÖÈ¾(UI, Á£×Ó, ×Ó»­ÃæµÈ)
--¸ß±£Õæ¶È»ùÓÚÎïÀíµÄ3DäÖÈ¾(ÉÔºó±àĞ´,2DÓÅÏÈ)
--Ö§³ÖMac, Linux, AndroidºÍiOS
--±¾»úäÖÈ¾APIÖ§³Ö(DirectX, Vulkan, Metal)
--¹¦ÄÜÆëÈ«µÄ²é¿´Æ÷ºÍ±à¼­Æ÷Ó¦ÓÃ³ÌĞò
--ÍêÈ«½Å±¾»¯µÄ½»»¥ºÍĞĞÎª
--¼¯³ÉµÄµÚÈı·½2DºÍ3DÎïÀíÒıÇæ
--³ÌĞòµØĞÎºÍÊÀ½çÉú³É
--ÈË¹¤ÖÇÄÜ
--ÒôÏìÏµÍ³
-## Íâ²¿²Ö¿â/¹¤¾ß
+Sandboxæ˜¯è°ƒç”¨å’Œè°ƒè¯•Remcçš„ä¸»è¦ç¨‹åº
+## å³å°†æ¨å‡ºçš„ä¸»è¦åŠŸèƒ½
+-å¿«é€Ÿ2Dæ¸²æŸ“(UI, ç²’å­, å­ç”»é¢ç­‰)
+-é«˜ä¿çœŸåº¦åŸºäºç‰©ç†çš„3Dæ¸²æŸ“(ç¨åç¼–å†™,2Dä¼˜å…ˆ)
+-æ”¯æŒMac, Linux, Androidå’ŒiOS
+-æœ¬æœºæ¸²æŸ“APIæ”¯æŒ(DirectX, Vulkan, Metal)
+-åŠŸèƒ½é½å…¨çš„æŸ¥çœ‹å™¨å’Œç¼–è¾‘å™¨åº”ç”¨ç¨‹åº
+-å®Œå…¨è„šæœ¬åŒ–çš„äº¤äº’å’Œè¡Œä¸º
+-é›†æˆçš„ç¬¬ä¸‰æ–¹2Då’Œ3Dç‰©ç†å¼•æ“
+-ç¨‹åºåœ°å½¢å’Œä¸–ç•Œç”Ÿæˆ
+-äººå·¥æ™ºèƒ½
+-éŸ³å“ç³»ç»Ÿ
+## å¤–éƒ¨ä»“åº“/å·¥å…·
 1. [Spdlog](https://github.com/gabime/spdlog).  
 2. [premake](https://github.com/premake).  
 3. [GLFW](https://github.com/TheCherno/glfw).  
@@ -30,5 +30,5 @@ SandboxÊÇµ÷ÓÃºÍµ÷ÊÔRemcµÄÖ÷Òª³ÌĞò
 5. [ImGui](https://github.com/TheCherno/imgui).  
 6. [glm](https://github.com/g-truc/glm).  
 7. [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h).  
-## ×îºó
-¸ĞĞ»Äú¶Ô¸ÃÏîÄ¿µÄÖ§³Ö
+## æœ€å
+æ„Ÿè°¢æ‚¨å¯¹è¯¥é¡¹ç›®çš„æ”¯æŒ
