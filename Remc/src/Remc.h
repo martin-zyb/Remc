@@ -2,6 +2,8 @@
 
 // For use by Remc applications
 
+#include "Remc/Core/Core.h"
+
 #include "Remc/Core/Application.h"
 #include "Remc/Core/Layer.h"
 #include "Remc/Core/Log.h"

@@ -1,4 +1,5 @@
 #pragma once
+#include "Remc/Core/Core.h"
 
 #ifdef REMC_PLATFORM_WINDOWS
 

@@ -1,11 +1,7 @@
 #include "rcpch.h"
-#include "LayerStack.h"
+#include "Remc/Core/LayerStack.h"
 
 namespace Remc {
-
-	LayerStack::LayerStack()
-	{
-	}
 
 	LayerStack::~LayerStack()
 	{

@@ -1,9 +1,7 @@
 #include <Remc.h>
 #include <Remc/Core/EntryPoint.h>
 
-#include "imgui/imgui.h"
-
-#include "Platform/OpenGL/OpenGLShader.h"
+#include <imgui/imgui.h>
 
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -24,8 +22,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		Remc::Ref<Remc::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Remc::VertexBuffer::Create(vertices, sizeof(vertices)));
+		Remc::Ref<Remc::VertexBuffer> vertexBuffer = Remc::VertexBuffer::Create(vertices, sizeof(vertices));
 		Remc::BufferLayout layout = {
 			{ Remc::ShaderDataType::Float3, "a_Position" },
 			{ Remc::ShaderDataType::Float4, "a_Color" }
@@ -34,8 +31,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		Remc::Ref<Remc::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Remc::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		Remc::Ref<Remc::IndexBuffer> indexBuffer = Remc::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 		m_SquareVA = Remc::VertexArray::Create();
 
@@ -46,8 +42,7 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		Remc::Ref<Remc::VertexBuffer> squareVB;
-		squareVB.reset(Remc::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Remc::Ref<Remc::VertexBuffer> squareVB = Remc::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 		squareVB->SetLayout({
 			{ Remc::ShaderDataType::Float3, "a_Position" },
 			{ Remc::ShaderDataType::Float2, "a_TexCoord" }
@@ -55,8 +50,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		Remc::Ref<Remc::IndexBuffer> squareIB;
-		squareIB.reset(Remc::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Remc::Ref<Remc::IndexBuffer> squareIB = Remc::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 		std::string vertexSrc = R"(
@@ -135,8 +129,8 @@ public:
 		m_Texture = Remc::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_LogoTexture = Remc::Texture2D::Create("assets/textures/Logo.png");
 
-		std::dynamic_pointer_cast<Remc::OpenGLShader>(textureShader)->Bind();
-		std::dynamic_pointer_cast<Remc::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
+		textureShader->Bind();
+		textureShader->SetInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Remc::Timestep ts) override
@@ -169,8 +163,8 @@ public:
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
-		std::dynamic_pointer_cast<Remc::OpenGLShader>(m_FlatColorShader)->Bind();
-		std::dynamic_pointer_cast<Remc::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+		m_FlatColorShader->Bind();
+		m_FlatColorShader->SetFloat3("u_Color", m_SquareColor);
 
 		for (int y = 0; y < 20; y++)
 		{

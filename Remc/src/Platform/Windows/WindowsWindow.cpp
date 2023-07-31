@@ -1,5 +1,5 @@
 #include "rcpch.h"
-#include "WindowsWindow.h"
+#include "Platform/Windows/WindowsWindow.h"
 
 #include "Remc/Events/ApplicationEvent.h"
 #include "Remc/Events/MouseEvent.h"
@@ -16,9 +16,9 @@ namespace Remc {
 		REMC_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
-	Window* Window::Create(const WindowProps& props)
+	Scope<Window> Window::Create(const WindowProps& props)
 	{
-		return new WindowsWindow(props);
+		return CreateScope<WindowsWindow>(props);
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
@@ -150,7 +150,10 @@ namespace Remc {
 	void WindowsWindow::Shutdown()
 	{
 		glfwDestroyWindow(m_Window);
-		if (--s_GLFWWindowCount == 0)
+
+		--s_GLFWWindowCount;
+
+		if (s_GLFWWindowCount == 0)
 		{
 			REMC_CORE_INFO("Terminating GLFW");
 			glfwTerminate();

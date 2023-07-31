@@ -1,7 +1,7 @@
 #include "rcpch.h"
-#include "Shader.h"
+#include "Remc/Renderer/Shader.h"
 
-#include "Renderer.h"
+#include "Remc/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 
 namespace Remc
@@ -11,7 +11,7 @@ namespace Remc
 		switch (Renderer::GetAPI())
 		{
 		case RendererAPI::API::None:    REMC_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLShader>(filepath);
+		case RendererAPI::API::OpenGL:  return CreateRef<OpenGLShader>(filepath);
 		}
 
 		REMC_CORE_ASSERT(false, "Unknown RendererAPI!");
@@ -23,7 +23,7 @@ namespace Remc
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:  REMC_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLShader>(name, vertexSrc, fragmentSrc);
+			case RendererAPI::API::OpenGL:  return CreateRef<OpenGLShader>(name, vertexSrc, fragmentSrc);
 		}
 
 		REMC_CORE_ASSERT(false, "Unknown RendererAPI!");

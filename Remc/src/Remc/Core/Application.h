@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Core.h"
+#include "Remc/Core/Core.h"
 
-#include "Window.h"
+#include "Remc/Core/Window.h"
 #include "Remc/Core/LayerStack.h"
 #include "Remc/Events/Event.h"
 #include "Remc/Events/ApplicationEvent.h"
@@ -17,7 +17,7 @@ namespace Remc {
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 
 		void Run();
 

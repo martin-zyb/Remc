@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Remc/Core/Core.h"
-#include "Layer.h"
+#include "Remc/Core/Layer.h"
 
 #include <vector>
 
@@ -10,7 +10,7 @@ namespace Remc {
 	class REMC_API LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

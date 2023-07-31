@@ -1,7 +1,7 @@
 #include "rcpch.h"
-#include "Texture.h"
+#include "Remc/Renderer/Texture.h"
 
-#include "Renderer.h"
+#include "Remc/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace Remc {

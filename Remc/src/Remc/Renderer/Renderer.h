@@ -1,8 +1,8 @@
 #pragma once
 
-#include "RenderCommand.h"
-#include "OrthographicCamera.h"
-#include "Shader.h"
+#include "Remc/Renderer/RenderCommand.h"
+#include "Remc/Renderer/OrthographicCamera.h"
+#include "Remc/Renderer/Shader.h"
 
 namespace Remc {
 
@@ -10,6 +10,8 @@ namespace Remc {
 	{
 	public:
 		static void Init();
+		static void Shutdown();
+
 		static void OnWindowResize(uint32_t width, uint32_t height);
 
 		static void BeginScene(OrthographicCamera& camera);

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OrthographicCamera.h"
+#include "Remc/Renderer/OrthographicCamera.h"
 
-#include "Texture.h"
+#include "Remc/Renderer/Texture.h"
 
 namespace Remc {
 
