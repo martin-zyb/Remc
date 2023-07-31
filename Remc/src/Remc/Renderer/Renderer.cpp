@@ -9,6 +9,8 @@ namespace Remc {
 
 	void Renderer::Init()
 	{
+		REMC_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
 	}

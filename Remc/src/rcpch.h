@@ -15,6 +15,8 @@
 
 #include "Remc/Core/Log.h"
 
+#include "Remc/DeBug/Instrumentor.h"
+
 #ifdef REMC_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

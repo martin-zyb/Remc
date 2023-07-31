@@ -15,6 +15,8 @@ namespace Remc
 
 	void OpenGLContext::Init()
 	{
+		REMC_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		REMC_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -35,6 +37,8 @@ namespace Remc
 
 	void OpenGLContext::SwapBuffers()
 	{
+		REMC_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 
