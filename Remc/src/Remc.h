@@ -12,7 +12,7 @@
 
 #include "Remc/Core/Input.h"
 #include "Remc/Core/KeyCodes.h"
-#include "Remc/Core/MouseButtonCodes.h"
+#include "Remc/Core/MouseCodes.h"
 #include "Remc/Renderer/OrthographicCameraController.h"
 
 #include "Remc/ImGui/ImGuiLayer.h"
