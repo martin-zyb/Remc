@@ -12,3 +12,6 @@ bin-int/
 
 # Instrumentation files
 **.json
+
+# Remc Log filters
+**.log
