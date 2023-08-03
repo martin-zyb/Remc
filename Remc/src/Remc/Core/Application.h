@@ -11,6 +11,8 @@
 
 #include "Remc/Core/Timestep.h"
 
+int main(int argc, char** argv);
+
 namespace Remc {
 
 	class Application
@@ -18,8 +20,6 @@ namespace Remc {
 	public:
 		Application();
 		virtual ~Application();
-
-		void Run();
 
 		void OnEvent(Event& e);
 
@@ -29,7 +29,9 @@ namespace Remc {
 		inline Window& GetWindow() { return *m_Window; }
 
 		inline static Application& Get() { return *s_Instance; }
+
 	private:
+		void Run();
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);
 
@@ -42,6 +44,8 @@ namespace Remc {
 		float m_LastFrameTime = 0.0f;
 
 		static Application* s_Instance;
+
+		friend int ::main(int argc, char** argv);
 	};
 
 	// To be defined in CLIENT
