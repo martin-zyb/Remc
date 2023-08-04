@@ -21,7 +21,7 @@ Sandbox是调用和调试Remc的主要程序
 - 集成的第三方2D和3D物理引擎
 - 程序地形和世界生成
 - 人工智能
--音响系统
+- 音响系统
 ## 外部仓库/工具
 1. [Spdlog](https://github.com/gabime/spdlog).  
 2. [premake](https://github.com/premake).  
