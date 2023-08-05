@@ -48,7 +48,7 @@ namespace Remc {
 		{
 			REMC_CORE_INFO("Initializing GLFW");
 			int success = glfwInit();
-			REMC_CORE_ASSERT(success, "Could not intialize GLFW!");
+			REMC_CORE_ASSERT(success, "Could not initialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 		}
 
