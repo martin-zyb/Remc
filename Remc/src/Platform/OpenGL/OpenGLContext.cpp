@@ -3,7 +3,6 @@
 
 #include <GLFW\glfw3.h>
 #include <GLad/glad.h>
-#include <gl/GL.h>
 
 namespace Remc
 {

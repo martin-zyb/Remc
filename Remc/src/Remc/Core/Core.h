@@ -60,12 +60,22 @@
 #endif // End of DLL support
 
 #ifdef REMC_DEBUG
+	#if defined(REMC_PLATFORM_WINDOWS)
+		#define REMC_DEBUGBREAK() __debugbreak()
+	#elif defined(REMC_PLATFORM_LINUX)
+		#include <signal.h>
+		#define REMC_DEBUGBREAK() raise(SIGTRAP)
+	#else
+		#error "Platform doesn't support debugbreak yet!"
+	#endif
 	#define REMC_ENABLE_ASSERTS
+#else
+	#define HZ_DEBUGBREAK()
 #endif
 
 #ifdef REMC_ENABLE_ASSERTS
-	#define REMC_ASSERT(x, ...) { if(!(x)) { REMC_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define REMC_CORE_ASSERT(x, ...) { if(!(x)) { REMC_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define REMC_ASSERT(x, ...) { if(!(x)) { REMC_ERROR("Assertion Failed: {0}", __VA_ARGS__); REMC_DEBUGBREAK(); } }
+	#define REMC_CORE_ASSERT(x, ...) { if(!(x)) { REMC_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); REMC_DEBUGBREAK(); } }
 #else
 	#define REMC_ASSERT(x, ...)
 	#define REMC_CORE_ASSERT(x, ...)

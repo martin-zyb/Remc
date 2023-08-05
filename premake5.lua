@@ -57,6 +57,7 @@ project "Remc"
 	defines
 	{
 		"_CRT_SECURE_NO_WARNINGS"
+		"GLFW_INCLUDE_NONE"
 	}
 
 	includedirs
@@ -84,7 +85,6 @@ project "Remc"
 		defines
 		{
 			"REMC_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"
