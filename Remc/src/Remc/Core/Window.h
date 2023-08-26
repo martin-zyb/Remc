@@ -2,7 +2,7 @@
 
 #include "rcpch.h"
 
-#include "Remc/Core/Core.h"
+#include "Remc/Core/Base.h"
 #include "Remc/Events/Event.h"
 
 namespace Remc {

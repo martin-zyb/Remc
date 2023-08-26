@@ -2,7 +2,7 @@
 
 // For use by Remc applications
 
-#include "Remc/Core/Core.h"
+#include "Remc/Core/Base.h"
 
 #include "Remc/Core/Application.h"
 #include "Remc/Core/Layer.h"

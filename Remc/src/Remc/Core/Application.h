@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Remc/Core/Core.h"
+#include "Remc/Core/Base.h"
 
 #include "Remc/Core/Window.h"
 #include "Remc/Core/LayerStack.h"

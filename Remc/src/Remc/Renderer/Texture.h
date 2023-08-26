@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Remc/Core/Core.h"
+#include "Remc/Core/Base.h"
 
 namespace Remc {
 
