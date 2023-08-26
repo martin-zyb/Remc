@@ -52,6 +52,11 @@ namespace Remc {
 		layer->OnAttach();
 	}
 
+	void Application::Close()
+	{
+		m_Running = false;
+	}
+
 	void Application::OnEvent(Event& e)
 	{
 		REMC_PROFILE_FUNCTION();
