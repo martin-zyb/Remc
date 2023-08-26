@@ -20,6 +20,7 @@ private:
 	// Temp
 	Remc::Ref<Remc::VertexArray> m_SquareVA;
 	Remc::Ref<Remc::Shader> m_FlatColorShader;
+	Remc::Ref<Remc::Framebuffer> m_Framebuffer;
 
 	Remc::Ref<Remc::Texture2D> m_CheckerboardTexture;
 
