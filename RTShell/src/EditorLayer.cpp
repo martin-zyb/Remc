@@ -157,31 +157,23 @@ namespace Remc {
 			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
 			ImGui::Text("\n");
 
+			ImGui::End();
+
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
+			ImGui::Begin("Viewport");
+			ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
+			if (m_ViewportSize != *((glm::vec2*)&viewportPanelSize))
+			{
+				m_Framebuffer->Resize((uint32_t)viewportPanelSize.x, (uint32_t)viewportPanelSize.y);
+				m_ViewportSize = { viewportPanelSize.x, viewportPanelSize.y };
+
+				m_CameraController.OnResize(viewportPanelSize.x, viewportPanelSize.y);
+			}
 			uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
-			ImGui::Image((void*)textureID, ImVec2{ 1280, 720 });
+			ImGui::Image((void*)textureID, ImVec2{ m_ViewportSize.x, m_ViewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
 			ImGui::End();
+			ImGui::PopStyleVar();
 
-			ImGui::End();
-		}
-		else
-		{
-			ImGui::Begin("Settings");
-
-			ImGui::Checkbox("Color Grid", &Color_grid);
-
-			auto stats = Remc::Renderer2D::GetStats();
-			ImGui::Text("Renderer2D Stats:");
-			ImGui::Text("	Draw Calls:	%d", stats.DrawCalls);
-			ImGui::Text("	Quads:		 %d", stats.QuadCount);
-			ImGui::Text("	Vertices:	  %d", stats.GetTotalVertexCount());
-			ImGui::Text("	Indices:	   %d", stats.GetTotalIndexCount());
-
-			ImGui::Text("\n");
-			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
-			ImGui::Text("\n");
-
-			uint32_t textureID = m_CheckerboardTexture->GetRendererID();
-			ImGui::Image((void*)textureID, ImVec2{ 1280, 720 });
 			ImGui::End();
 		}
 	}

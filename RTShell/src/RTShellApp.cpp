@@ -5,23 +5,23 @@
 
 namespace Remc {
 
-	class RemcEditor : public Application
+	class RTShell : public Application
 	{
 	public:
-		RemcEditor()
-			: Application("Remc Editor")
+		RTShell()
+			: Application("RTShell")
 		{
 			PushLayer(new EditorLayer());
 		}
 
-		~RemcEditor()
+		~RTShell()
 		{
 		}
 	};
 
 	Application* CreateApplication()
 	{
-		return new RemcEditor();
+		return new RTShell();
 	}
 
 }

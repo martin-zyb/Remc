@@ -1,6 +1,6 @@
 workspace "Remc"
 	architecture "x86_64"
-	startproject "Sandbox"
+	startproject "RTShell"
 
 	configurations
 	{
@@ -149,8 +149,8 @@ project "Sandbox"
 		runtime "Release"
 		optimize "on"
 
-project "Remc-Editor"
-	location "Remc-Editor"
+project "RTShell"
+	location "RTShell"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
