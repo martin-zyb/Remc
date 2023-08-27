@@ -148,3 +148,50 @@ project "Sandbox"
 		defines "REMC_DIST"
 		runtime "Release"
 		optimize "on"
+
+project "Remc-Editor"
+	location "Remc-Editor"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"Remc/vendor/spdlog/include",
+		"Remc/src",
+		"Remc/vendor",
+		"%{IncludeDir.glm}"
+	}
+
+	links
+	{
+		"Remc"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		defines "REMC_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "REMC_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "REMC_DIST"
+		runtime "Release"
+		optimize "on"
