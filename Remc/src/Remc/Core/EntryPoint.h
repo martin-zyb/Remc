@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 	app->Run();
 	REMC_PROFILE_END_SESSION();
 
-	REMC_PROFILE_BEGIN_SESSION("Startup", "RemcProfile-Shutdown.json");
+	REMC_PROFILE_BEGIN_SESSION("Shutdown", "RemcProfile-Shutdown.json");
 	delete app;
 	REMC_PROFILE_END_SESSION();
 }
