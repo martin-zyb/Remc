@@ -73,6 +73,7 @@
 	#define HZ_DEBUGBREAK()
 #endif
 
+// TODO: Make this macro able to take in no arguments except condition
 #ifdef REMC_ENABLE_ASSERTS
 	#define REMC_ASSERT(x, ...) { if(!(x)) { REMC_ERROR("Assertion Failed: {0}", __VA_ARGS__); REMC_DEBUGBREAK(); } }
 	#define REMC_CORE_ASSERT(x, ...) { if(!(x)) { REMC_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); REMC_DEBUGBREAK(); } }

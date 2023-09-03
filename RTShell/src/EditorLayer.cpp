@@ -15,12 +15,20 @@ namespace Remc {
 	{
 		REMC_PROFILE_FUNCTION();
 
-		m_CheckerboardTexture = Remc::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_CheckerboardTexture = Texture2D::Create("assets/textures/Checkerboard.png");
 
-		Remc::FramebufferSpecification fbSpec;
+		FramebufferSpecification fbSpec;
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
-		m_Framebuffer = Remc::Framebuffer::Create(fbSpec);
+		m_Framebuffer = Framebuffer::Create(fbSpec);
+
+		m_ActiveScene = CreateRef<Scene>();
+
+		auto square = m_ActiveScene->CreateEntity();
+		m_ActiveScene->Reg().emplace<TransformComponent>(square);
+		m_ActiveScene->Reg().emplace<SpriteRendererComponent>(square, glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
+
+		m_SquareEntity = square;
 	}
 
 	void EditorLayer::OnDetach()
@@ -28,12 +36,12 @@ namespace Remc {
 		REMC_PROFILE_FUNCTION();
 	}
 
-	void EditorLayer::OnUpdate(Remc::Timestep ts)
+	void EditorLayer::OnUpdate(Timestep ts)
 	{
 		REMC_PROFILE_FUNCTION();
 
 		// Resize
-		if (Remc::FramebufferSpecification spec = m_Framebuffer->GetSpecification();
+		if (FramebufferSpecification spec = m_Framebuffer->GetSpecification();
 			m_ViewportSize.x > 0.0f && m_ViewportSize.y > 0.0f && // zero sized framebuffer is invalid
 			(spec.Width != m_ViewportSize.x || spec.Height != m_ViewportSize.y))
 		{
@@ -48,15 +56,12 @@ namespace Remc {
 		}
 
 		// Render
-		Remc::Renderer2D::ResetStats();
-		{
-			REMC_PROFILE_SCOPE("Renderer Prep");
-			m_Framebuffer->Bind();
-			Remc::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
-			Remc::RenderCommand::Clear();
-		}
+		Renderer2D::ResetStats();
+		m_Framebuffer->Bind();
+		RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		RenderCommand::Clear();
 
-		{
+		/* {
 			static float rotation = 0.0f;
 			rotation += ts * 50.0f;
 
@@ -84,7 +89,16 @@ namespace Remc {
 			}
 			Remc::Renderer2D::EndScene();
 			m_Framebuffer->Unbind();
-		}
+		}*/
+
+		Renderer2D::BeginScene(m_CameraController.GetCamera());
+
+		// Update scene
+		m_ActiveScene->OnUpdate(ts);
+
+		Renderer2D::EndScene();
+
+		m_Framebuffer->Unbind();
 	}
 
 	void EditorLayer::OnImGuiRender()
@@ -147,7 +161,7 @@ namespace Remc {
 					// which we can't undo at the moment without finer window depth/z control.
 					//ImGui::MenuItem("Fullscreen", NULL, &opt_fullscreen_persistant);
 
-					if (ImGui::MenuItem("Exit")) Remc::Application::Get().Close();
+					if (ImGui::MenuItem("Exit")) Application::Get().Close();
 					ImGui::EndMenu();
 				}
 
@@ -158,7 +172,7 @@ namespace Remc {
 
 			ImGui::Checkbox("Color Grid", &Color_grid);
 
-			auto stats = Remc::Renderer2D::GetStats();
+			auto stats = Renderer2D::GetStats();
 			ImGui::Text("Renderer2D Stats:");
 			ImGui::Text("	Draw Calls:	%d", stats.DrawCalls);
 			ImGui::Text("	Quads:		 %d", stats.QuadCount);
@@ -166,7 +180,8 @@ namespace Remc {
 			ImGui::Text("	Indices:	   %d", stats.GetTotalIndexCount());
 
 			ImGui::Text("\n");
-			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
+			auto& squareColor = m_ActiveScene->Reg().get<SpriteRendererComponent>(m_SquareEntity).Color;
+			ImGui::ColorEdit4("Square Color", glm::value_ptr(squareColor));
 			ImGui::Text("\n");
 
 			ImGui::End();
@@ -189,7 +204,7 @@ namespace Remc {
 		}
 	}
 
-	void EditorLayer::OnEvent(Remc::Event& e)
+	void EditorLayer::OnEvent(Event& e)
 	{
 		m_CameraController.OnEvent(e);
 	}

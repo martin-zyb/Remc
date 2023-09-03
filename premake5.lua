@@ -23,6 +23,7 @@ IncludeDir["Glad"] = "Remc/vendor/Glad/include"
 IncludeDir["ImGui"] = "Remc/vendor/imgui"
 IncludeDir["glm"] = "Remc/vendor/glm"
 IncludeDir["stb_image"] = "Remc/vendor/stb_image"
+IncludeDir["entt"] = "Remc/vendor/entt/include"
 
 group "Dependencies"
 	include "Remc/vendor/GLFW"
@@ -68,7 +69,8 @@ project "Remc"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 
 	links 
@@ -170,7 +172,8 @@ project "RTShell"
 		"Remc/vendor/spdlog/include",
 		"Remc/src",
 		"Remc/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
