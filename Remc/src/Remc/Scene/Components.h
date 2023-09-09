@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Remc/Renderer/Camera.h"
+#include "SceneCamera.h"
 
 #include <glm/glm.hpp>
 
@@ -41,13 +41,11 @@ namespace Remc {
 
 	struct CameraComponent
 	{
-		Remc::Camera Camera;
+		SceneCamera Camera;
 		bool Primary = true; // TODO: think about moving to Scene
+		bool FixedAspectRatio = false;
 
 		CameraComponent() = default;
 		CameraComponent(const CameraComponent&) = default;
-		CameraComponent(const glm::mat4& projection)
-			: Camera(projection) {}
 	};
-
 }
