@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Remc/Renderer/Camera.h"
+
 #include <glm/glm.hpp>
 
 namespace Remc {
@@ -35,6 +37,17 @@ namespace Remc {
 		SpriteRendererComponent(const SpriteRendererComponent&) = default;
 		SpriteRendererComponent(const glm::vec4& color)
 			: Color(color) {}
+	};
+
+	struct CameraComponent
+	{
+		Remc::Camera Camera;
+		bool Primary = true; // TODO: think about moving to Scene
+
+		CameraComponent() = default;
+		CameraComponent(const CameraComponent&) = default;
+		CameraComponent(const glm::mat4& projection)
+			: Camera(projection) {}
 	};
 
 }
