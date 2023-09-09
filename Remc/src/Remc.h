@@ -18,6 +18,7 @@
 #include "Remc/ImGui/ImGuiLayer.h"
 
 #include "Remc/Scene/Scene.h"
+#include "Remc/Scene/Entity.h"
 #include "Remc/Scene/Components.h"
 
 // ---Renderer------------------------

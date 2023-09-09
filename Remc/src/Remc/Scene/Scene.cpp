@@ -3,6 +3,7 @@
 
 #include "Components.h"
 #include "Remc/Renderer/Renderer2D.h"
+#include "Remc/Scene/Entity.h"
 
 #include <glm/glm.hpp>
 
@@ -49,9 +50,13 @@ namespace Remc {
 	{
 	}
 
-	entt::entity Scene::CreateEntity()
+	Entity Scene::CreateEntity(const std::string& name)
 	{
-		return m_Registry.create();
+		Entity entity = { m_Registry.create(), this };
+		entity.AddComponent<TransformComponent>();
+		auto& tag = entity.AddComponent<TagComponent>();
+		tag.Tag = name.empty() ? "Entity" : name;
+		return entity;
 	}
 
 	void Scene::OnUpdate(Timestep ts)
