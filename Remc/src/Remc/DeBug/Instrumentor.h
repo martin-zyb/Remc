@@ -207,8 +207,10 @@ namespace Remc {
 
 	#define REMC_PROFILE_BEGIN_SESSION(name, filepath) ::Remc::Instrumentor::Get().BeginSession(name, filepath)
 	#define REMC_PROFILE_END_SESSION() ::Remc::Instrumentor::Get().EndSession()
-	#define REMC_PROFILE_SCOPE(name) constexpr auto fixedName = ::Remc::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
-						::Remc::InstrumentationTimer timer##__LINE__(fixedName.Data)
+	#define REMC_PROFILE_SCOPE_LINE2(name, line) constexpr auto fixedName##line = ::Remc::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
+												   ::Remc::InstrumentationTimer timer##line(fixedName##line.Data)
+	#define REMC_PROFILE_SCOPE_LINE(name, line) REMC_PROFILE_SCOPE_LINE2(name, line)
+	#define REMC_PROFILE_SCOPE(name) REMC_PROFILE_SCOPE_LINE(name, __LINE__)
 	#define REMC_PROFILE_FUNCTION() REMC_PROFILE_SCOPE(REMC_FUNC_SIG)
 #else
 	#define REMC_PROFILE_BEGIN_SESSION(name, filepath)
