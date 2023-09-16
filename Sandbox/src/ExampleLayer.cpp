@@ -140,19 +140,19 @@ void ExampleLayer::OnUpdate(Remc::Timestep ts)
 	// Update
 	m_CameraController.OnUpdate(ts);
 
-	if (Remc::Input::IsKeyPressed(REMC_KEY_J))
+	if (Remc::Input::IsKeyPressed(Remc::Key::J))
 	{
 		m_SquareMoveDistance.x -= m_SquareMoveSpeed * ts;
 	}
-	else if (Remc::Input::IsKeyPressed(REMC_KEY_L))
+	else if (Remc::Input::IsKeyPressed(Remc::Key::L))
 	{
 		m_SquareMoveDistance.x += m_SquareMoveSpeed * ts;
 	}
-	if (Remc::Input::IsKeyPressed(REMC_KEY_I))
+	if (Remc::Input::IsKeyPressed(Remc::Key::I))
 	{
 		m_SquareMoveDistance.y += m_SquareMoveSpeed * ts;
 	}
-	else if (Remc::Input::IsKeyPressed(REMC_KEY_K))
+	else if (Remc::Input::IsKeyPressed(Remc::Key::K))
 	{
 		m_SquareMoveDistance.y -= m_SquareMoveSpeed * ts;
 	}

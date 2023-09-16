@@ -1,6 +1,6 @@
 #pragma once
 
-#include "rcpch.h"
+#include <sstream>
 
 #include "Remc/Core/Base.h"
 #include "Remc/Events/Event.h"

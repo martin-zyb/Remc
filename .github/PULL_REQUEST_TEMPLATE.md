@@ -1,3 +1,8 @@
+---
+name: 'Pull Request template'
+about: 
+---
+
 #### Describe the issue (if no issue has been made)
 A clear and concise description of what the issue is. Explain the difference between the expected and the current behavior.
 A screenshot or copy of the error could be helpful as well.

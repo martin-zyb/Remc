@@ -1,7 +1,8 @@
 #pragma once
 
-#include "rcpch.h"
+#include <functional>
 
+#include "Remc/Debug/Instrumentor.h"
 #include "Remc/Core/Base.h"
 
 namespace Remc {
