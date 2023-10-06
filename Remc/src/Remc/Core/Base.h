@@ -30,17 +30,11 @@
 	#endif
 	#define REMC_ENABLE_ASSERTS
 #else
-	#define HZ_DEBUGBREAK()
+	#define REMC_DEBUGBREAK()
 #endif
 
-// TODO: Make this macro able to take in no arguments except condition
-#ifdef REMC_ENABLE_ASSERTS
-	#define REMC_ASSERT(x, ...) { if(!(x)) { REMC_ERROR("Assertion Failed: {0}", __VA_ARGS__); REMC_DEBUGBREAK(); } }
-	#define REMC_CORE_ASSERT(x, ...) { if(!(x)) { REMC_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); REMC_DEBUGBREAK(); } }
-#else
-	#define REMC_ASSERT(x, ...)
-	#define REMC_CORE_ASSERT(x, ...)
-#endif
+#define REMC_EXPAND_MACRO(x) x
+#define REMC_STRINGIFY_MACRO(x) #x
 
 #define BIT(x) (1 << x)
 
@@ -66,3 +60,6 @@ namespace Remc
 	}
 
 }
+
+#include "Remc/Core/Log.h"
+#include "Remc/Core/Assert.h"

@@ -7,6 +7,7 @@
 #include "Remc/Core/Application.h"
 #include "Remc/Core/Layer.h"
 #include "Remc/Core/Log.h"
+#include "Remc/Core/Assert.h"
 
 #include "Remc/Core/Timestep.h"
 

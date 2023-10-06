@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Remc/Core/Base.h"
-#include "Remc/Core/Log.h"
 #include "Remc/Scene/Scene.h"
 #include "Remc/Scene/Entity.h"
 
