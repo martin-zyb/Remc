@@ -26,12 +26,14 @@ IncludeDir["ImGui"] = "%{wks.location}/Remc/vendor/imgui"
 IncludeDir["glm"] = "%{wks.location}/Remc/vendor/glm"
 IncludeDir["stb_image"] = "%{wks.location}/Remc/vendor/stb_image"
 IncludeDir["entt"] = "%{wks.location}/Remc/vendor/entt/include"
+IncludeDir["yaml_cpp"] = "%{wks.location}/Remc/vendor/yaml-cpp/include"
 
 group "Dependencies"
 	include "vendor/premake"
 	include "Remc/vendor/GLFW"
 	include "Remc/vendor/GLad"
 	include "Remc/vendor/imgui"
+	include "Remc/vendor/yaml-cpp"
 
 group ""
 
