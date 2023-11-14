@@ -18,6 +18,13 @@ namespace Remc {
 		virtual void OnImGuiRender() override;
 		void OnEvent(Event& e) override;
 	private:
+
+		bool OnKeyPressed(KeyPressedEvent& e);
+
+		void NewScene();
+		void OpenScene();
+		void SaveSceneAs();
+
 		Remc::OrthographicCameraController m_CameraController;
 
 		// Temp
