@@ -6,7 +6,7 @@
 
 namespace Remc {
 
-	class Renderer
+	class REMC_API Renderer
 	{
 	public:
 		static void Init();

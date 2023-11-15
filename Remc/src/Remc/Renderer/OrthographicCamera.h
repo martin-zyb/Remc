@@ -4,7 +4,7 @@
 
 namespace Remc
 {
-	class OrthographicCamera
+	class REMC_API OrthographicCamera
 	{
 	public:
 		OrthographicCamera(float left, float right, float bottom, float top);

@@ -9,7 +9,7 @@
 namespace Remc
 {
 
-	class OrthographicCameraController
+	class REMC_API OrthographicCameraController
 	{
 	public:
 		OrthographicCameraController(float aspectRatio, bool rotation = false);

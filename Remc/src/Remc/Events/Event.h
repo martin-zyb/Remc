@@ -55,7 +55,7 @@ namespace Remc {
 		}
 	};
 
-	class EventDispatcher
+	class REMC_API EventDispatcher
 	{
 	public:
 		EventDispatcher(Event& event)

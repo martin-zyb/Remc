@@ -65,7 +65,7 @@ namespace Remc {
 		}
 	};
 
-	class BufferLayout
+	class REMC_API BufferLayout
 	{
 	public:
 		BufferLayout() {}
@@ -102,7 +102,7 @@ namespace Remc {
 	};
 
 
-	class VertexBuffer
+	class REMC_API VertexBuffer
 	{
 	public:
 		virtual ~VertexBuffer() = default;
@@ -120,7 +120,7 @@ namespace Remc {
 	};
 
 	// Currently Remc only supports 32-bit index buffers
-	class IndexBuffer
+	class REMC_API IndexBuffer
 	{
 	public:
 		virtual ~IndexBuffer() = default;

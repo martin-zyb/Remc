@@ -4,7 +4,7 @@
 
 namespace Remc {
 
-	class ScriptableEntity
+	class REMC_API ScriptableEntity
 	{
 	public:
 		virtual ~ScriptableEntity() {}

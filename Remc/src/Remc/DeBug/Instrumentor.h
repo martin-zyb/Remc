@@ -28,7 +28,7 @@ namespace Remc {
 		std::string Name;
 	};
 
-	class Instrumentor
+	class REMC_API Instrumentor
 	{
 	public:
 		Instrumentor(const Instrumentor&) = delete;
@@ -132,7 +132,7 @@ namespace Remc {
 		std::ofstream m_OutputStream;
 	};
 
-	class InstrumentationTimer
+	class REMC_API InstrumentationTimer
 	{
 	public:
 		InstrumentationTimer(const char* name)

@@ -6,7 +6,7 @@
 
 namespace Remc
 {
-	class VertexArray
+	class REMC_API VertexArray
 	{
 	public:
 		virtual ~VertexArray() = default;

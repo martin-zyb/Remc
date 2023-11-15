@@ -15,7 +15,7 @@ int main(int argc, char** argv);
 
 namespace Remc {
 
-	class Application
+	class REMC_API Application
 	{
 	public:
 		Application(const std::string& name = "Remc App");

@@ -8,7 +8,7 @@
 
 namespace Remc {
 
-	class Renderer2D
+	class REMC_API Renderer2D
 	{
 	public:
 		static void Init();

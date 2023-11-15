@@ -2,7 +2,7 @@
 
 namespace Remc
 {
-	class GraphicsContext
+	class REMC_API GraphicsContext
 	{
 	public:
 		virtual ~GraphicsContext() = default;

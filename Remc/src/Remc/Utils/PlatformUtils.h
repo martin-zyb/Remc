@@ -4,7 +4,7 @@
 
 namespace Remc {
 
-	class FileDialogs
+	class REMC_API FileDialogs
 	{
 	public:
 		// These return empty strings if cancelled

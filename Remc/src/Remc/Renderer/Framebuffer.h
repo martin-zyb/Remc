@@ -13,7 +13,7 @@ namespace Remc {
 		bool SwapChainTarget = false;
 	};
 
-	class Framebuffer
+	class REMC_API Framebuffer
 	{
 	public:
 		virtual ~Framebuffer() = default;

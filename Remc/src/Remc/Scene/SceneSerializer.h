@@ -4,7 +4,7 @@
 
 namespace Remc {
 
-	class SceneSerializer
+	class REMC_API SceneSerializer
 	{
 	public:
 		SceneSerializer(const Ref<Scene>& scene);

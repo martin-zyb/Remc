@@ -6,7 +6,7 @@
 
 namespace Remc {
 
-	class Entity
+	class REMC_API Entity
 	{
 	public:
 		Entity() = default;

@@ -4,7 +4,7 @@
 
 namespace Remc {
 
-	class SceneCamera : public Camera
+	class REMC_API SceneCamera : public Camera
 	{
 	public:
 		enum class ProjectionType { Perspective = 0, Orthographic = 1 };

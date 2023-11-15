@@ -6,7 +6,7 @@
 
 namespace Remc
 {
-	class RendererAPI
+	class REMC_API RendererAPI
 	{
 	public:
 		enum class API

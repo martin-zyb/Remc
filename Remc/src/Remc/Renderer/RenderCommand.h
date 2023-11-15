@@ -4,7 +4,7 @@
 
 namespace Remc
 {
-	class RenderCommand
+	class REMC_API RenderCommand
 	{
 	public:
 		static void Init()

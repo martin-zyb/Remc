@@ -4,7 +4,7 @@
 
 namespace Remc {
 
-	class Camera
+	class REMC_API Camera
 	{
 	public:
 		Camera() = default;

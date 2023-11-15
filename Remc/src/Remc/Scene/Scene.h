@@ -8,7 +8,7 @@ namespace Remc {
 
 	class Entity;
 
-	class Scene
+	class REMC_API Scene
 	{
 	public:
 		Scene();
