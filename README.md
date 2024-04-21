@@ -1,6 +1,8 @@
 # Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE) [中文](https://github.com/martin-zyb/Remc/blob/main/README_CN.md)
   
 **Due to academic issues, update slowly and irregularly**  
+**Due to academic issues, update slowly and irregularly**  
+**Due to academic issues, update slowly and irregularly**  
 
 ![REMC](/Resources/Branding/REMC_Logo.png?raw=true "REMC")
 

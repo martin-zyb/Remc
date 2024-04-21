@@ -1,6 +1,8 @@
 # Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE) [English](https://github.com/martin-zyb/Remc/blob/main/README.md)
 
 **由于学业问题，不定期地缓慢更新**
+**由于学业问题，不定期地缓慢更新**
+**由于学业问题，不定期地缓慢更新**
 
 ![REMC](/Resources/Branding/REMC_Logo.png?raw=true "REMC")
 
