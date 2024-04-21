@@ -2,6 +2,7 @@
 **/bin/
 !vendor/premake/bin/
 bin-int/
+RTShell/*.exe
 
 # Visual Studio files and folder
 .vs/
