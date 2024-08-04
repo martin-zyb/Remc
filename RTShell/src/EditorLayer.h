@@ -3,6 +3,8 @@
 #include "Remc.h"
 #include "panels/SceneHierarchyPanel.h"
 
+#include "Remc/Renderer/EditorCamera.h"
+
 namespace Remc {
 
 	class EditorLayer : public Layer
@@ -38,6 +40,8 @@ namespace Remc {
 		Entity m_SecondCamera;
 
 		bool m_PrimaryCamera = true;
+
+		EditorCamera m_EditorCamera;
 
 		Ref<Texture2D> m_CheckerboardTexture;
 
