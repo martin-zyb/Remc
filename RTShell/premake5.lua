@@ -19,7 +19,8 @@ project "RTShell"
 		"%{wks.location}/Remc/src",
 		"%{wks.location}/Remc/vendor",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.ImGuizmo}"
 	}
 
 	links

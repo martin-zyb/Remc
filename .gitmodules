@@ -17,3 +17,6 @@
 [submodule "Remc/vendor/yaml-cpp"]
 	path = Remc/vendor/yaml-cpp
 	url = https://github.com/TheCherno/yaml-cpp
+[submodule "Remc/vendor/ImGuizmo"]
+	path = Remc/vendor/ImGuizmo
+	url = https://gitclone.com/github.com/TheCherno/ImGuizmo
