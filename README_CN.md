@@ -1,8 +1,8 @@
 # Remc [![License](https://img.shields.io/github/license/martin-zyb/Remc.svg)](https://github.com/martin-zyb/Remc/blob/master/LICENSE) [English](https://github.com/martin-zyb/Remc/blob/main/README.md)
 
-**由于学业问题，不定期地缓慢更新**
-**由于学业问题，不定期地缓慢更新**
-**由于学业问题，不定期地缓慢更新**
+**由于学业问题，不定期地缓慢更新**  
+**由于学业问题，不定期地缓慢更新**  
+**由于学业问题，不定期地缓慢更新**  
 
 ![REMC](/Resources/Branding/REMC_Logo.png?raw=true "REMC")
 
@@ -32,6 +32,7 @@ Sandbox是调用和调试Remc的主要程序
 5. [ImGui](https://github.com/TheCherno/imgui).  
 6. [glm](https://github.com/g-truc/glm).  
 7. [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h).  
-8. [EnTT](https://github.com/skypjack/entt).  
+8. [EnTT](https://github.com/skypjack/entt).
+9. [ImGuizmo](https://github.com/TheCherno/ImGuizmo).
 ## 最后
 感谢您对该项目的支持
