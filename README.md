@@ -10,9 +10,11 @@
 This is a game engine based on OpenGL, mainly written in C++.  
 ## Content
 ### Remc
-Remc is the main module of this project.  
+Remc is the main module of this project.
+### RTShell
+RTShell is a visualization tool that can be used to run Remc to create, debug, save/load games.
 ### Sandbox
-Sandbox is the main program that calls and debugs Remc.  
+Sandbox is the program that calls and debugs Remc. (**Obsolete**)
 ## Main features to come
 - Fast 2D rendering (UI, particles, sprites, etc.)
 - High-fidelity Physically-Based 3D rendering (this will be expanded later, 2D to come first)
